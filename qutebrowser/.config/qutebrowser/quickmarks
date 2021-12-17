@@ -69,3 +69,4 @@ nvim windwp/nvim-autopairs: autopairs for neovim written by lua https://github.c
 dotfiles ChristianChiarulli/Machfiles: The dotfiles you see in all my videos https://github.com/ChristianChiarulli/Machfiles
 flags parsing https://stackoverflow.com/questions/9642732/parsing-command-line-arguments-in-c
 nvim jose-elias-alvarez/null-ls.nvim: Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua. https://github.com/jose-elias-alvarez/null-ls.nvim
+nvim LunarVim/Neovim-from-scratch: A Neovim config designed from scratch to be understandable https://github.com/LunarVim/Neovim-from-scratch
