@@ -8,16 +8,12 @@ function run {
 }
 
 run picom
-run nitrogen --restore
-run volumeicon
-run nm-applet
+run xautolock -time 10 -locker blurlock
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #xfce4-power-manager &
-run pamac-tray
-run xfce4-clipman
-run start_conky_maia
-run xautolock -time 10 -locker blurlock
 #ff-theme-util &
 #fix_xcursor &
-run udiskie
-run sxhkd
+run nm-applet
+run pamac-tray
+run xfce4-clipman
+run volumeicon

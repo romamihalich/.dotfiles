@@ -11,3 +11,8 @@ export EDITOR="$VISUAL"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # set typematic delay and rate
 xset r rate 300 50 &
+
+sxhkd &
+udiskie &
+nitrogen --restore &
+start_conky_maia &
