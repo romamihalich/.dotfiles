@@ -577,3 +577,5 @@ screen.connect_signal("arrange", function (s)
         end
     end
 end)
+
+awful.spawn.with_shell("~/.config/awesome/autostart.sh")
