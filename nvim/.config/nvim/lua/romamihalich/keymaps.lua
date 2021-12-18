@@ -19,7 +19,7 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- TODO: mv move
-keymap("n", "K", "lua vim.lsp.buf.hover()<CR>", opts)
+keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
 
 keymap("n", "Y", "y$", opts)
 keymap("n", "<leader>h", "<c-w>h", opts)
