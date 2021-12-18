@@ -54,7 +54,7 @@ awesome lain https://github.com/lcpz/lain
 nvim folke/which-key.nvim: 💥 Create key bindings that stick. WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing. https://github.com/folke/which-key.nvim
 films Я, робот – смотреть онлайн – КиноПоиск https://www.kinopoisk.ru/film/4886/
 rasp petr https://www.vyatsu.ru/reports/schedule/prepod/889_1_08112021_21112021.html
-rasp https://www.vyatsu.ru/reports/schedule/Group/16100_1_06122021_19122021.pdf
+rasp https://www.vyatsu.ru/reports/schedule/Group/16100_1_20122021_02012022.pdf
 elec-book https://www.dns-shop.ru/product/396ef4da49843330/6-elektronnaa-kniga-digma-e63s-seryj/
 nvim williamboman/nvim-lsp-installer: Companion plugin for nvim-lspconfig that allows you to seamlessly install LSP servers locally with :LspInstall. (also supports Windows) https://github.com/williamboman/nvim-lsp-installer
 owc https://osu.ppy.sh/wiki/en/Tournaments/OWC/2021
