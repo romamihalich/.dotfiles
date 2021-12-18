@@ -1,5 +1,21 @@
-local actions = require('telescope.actions')
-require('telescope').setup{
+local telescope_status_ok, telescope = pcall(require, "telescope")
+if not telescope_status_ok then
+  return
+end
+
+local telescope_actions_status_ok, actions = pcall(require, "telescope.actions")
+if not telescope_actions_status_ok then
+  return
+end
+
+local project_status_ok, project = pcall(require, "project_nvim")
+if not project_status_ok then
+  return
+end
+
+project.setup {}
+
+telescope.setup{
   defaults = {
     mappings = {
       i = {
@@ -22,5 +38,5 @@ require('telescope').setup{
      }
    }
 }
-require('telescope').load_extension('projects')
-require('telescope').load_extension('fzf')
+telescope.load_extension('projects')
+telescope.load_extension('fzf')

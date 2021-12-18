@@ -1,4 +1,14 @@
-require('lspkind').init({
+local lspkind_status_ok, lspkind = pcall(require, "lspkind")
+if not lspkind_status_ok then
+	return
+end
+
+local cmp_status_ok, cmp = pcall(require, "cmp")
+if not cmp_status_ok then
+	return
+end
+
+lspkind.init({
     -- enables text annotations
     --
     -- default: true
@@ -43,9 +53,6 @@ require('lspkind').init({
     },
 })
 
--- Setup nvim-cmp.
-local cmp = require'cmp'
-
 cmp.setup({
   --completion = {
   --    completeopt = 'menu,menuone,noinsert'
@@ -68,7 +75,7 @@ cmp.setup({
   formatting = {
     format = function(entry, vim_item)
       -- fancy icons and a name of kind
-      vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
+      vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
 
       -- set a name for each source
       vim_item.menu = ({

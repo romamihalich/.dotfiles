@@ -1,3 +1,8 @@
+local status_ok, lualine = pcall(require, "lualine")
+if not status_ok then
+    return
+end
+
 local diagnostics = function()
   local msg = 'No Active Lsp'
   local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
@@ -12,7 +17,7 @@ local diagnostics = function()
   return msg
 end 
 
-require'lualine'.setup {
+lualine.setup {
   options = {
     icons_enabled = true,
     theme = 'onedark',

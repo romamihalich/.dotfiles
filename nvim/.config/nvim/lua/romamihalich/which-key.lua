@@ -1,4 +1,8 @@
-local which_key = require("which-key")
+local status_ok, which_key = pcall(require, "which-key")
+if not status_ok then
+  return
+end
+
 which_key.setup {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
