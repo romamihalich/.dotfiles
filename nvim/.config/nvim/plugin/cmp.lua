@@ -82,7 +82,7 @@ cmp.setup({
     end,
   },
   sources = {
-    { name = 'nvim_lsp', keyword_length = 3 },
+    { name = 'nvim_lsp', --[[ keyword_length = 3  ]]},
 
     --{ name = 'buffer' },
 
