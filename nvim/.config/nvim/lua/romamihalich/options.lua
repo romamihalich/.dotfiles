@@ -17,8 +17,11 @@ local options = {
     signcolumn= "yes",
     mouse= "a",
     timeoutlen = 250,
+    splitright = true,
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+vim.cmd [[ set iskeyword+=- ]]
