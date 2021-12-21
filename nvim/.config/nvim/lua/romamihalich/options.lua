@@ -18,6 +18,7 @@ local options = {
     mouse= "a",
     timeoutlen = 250,
     splitright = true,
+    termguicolors = true,
 }
 
 for k, v in pairs(options) do
