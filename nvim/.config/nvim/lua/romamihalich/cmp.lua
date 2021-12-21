@@ -128,12 +128,9 @@ cmp.setup({
     end,
   },
   sources = {
-    { name = 'nvim_lsp', --[[ keyword_length = 3  ]]},
-
-    --{ name = 'buffer' },
-
     { name = 'luasnip' },
-
+    { name = 'nvim_lsp', --[[ keyword_length = 3  ]]},
+    --{ name = 'buffer' },
     { name = 'path'}
   },
   documentation = {
