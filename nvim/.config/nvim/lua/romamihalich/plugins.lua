@@ -81,8 +81,8 @@ return packer.startup(function(use)
     use 'onsails/lspkind-nvim'
 
     -- Snippets
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
+    use "L3MON4D3/LuaSnip"
+    use "saadparwaiz1/cmp_luasnip"
     use 'rafamadriz/friendly-snippets'
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
