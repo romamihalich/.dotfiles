@@ -15,7 +15,7 @@ local diagnostics = function()
     end
   end
   return msg
-end 
+end
 
 lualine.setup {
   options = {
@@ -30,7 +30,15 @@ lualine.setup {
     lualine_b = {'branch'},
     lualine_c = {'filename'},
     lualine_x = {
-      {'diagnostics', sources = { 'nvim_diagnostic' }},
+      {
+        'diagnostics',
+        sources = { 'nvim_diagnostic' },
+        sections = { "error", "warn", "hint" },
+        symbols = { error = " ", warn = " ", hint = " " },
+        colored = true,
+        update_in_insert = false,
+        always_visible = false,
+      },
       {diagnostics, icon = ' LSP:'},
       'encoding',
       'fileformat',
