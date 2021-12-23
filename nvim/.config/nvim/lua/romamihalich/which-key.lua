@@ -69,7 +69,7 @@ which_key.register({
     ["<leader>"] = {
       c = {
         name = "+code",
-        a = { ":Telescope lsp_range_code_actions<CR>", "Code actions"}
+        a = { ":Telescope lsp_range_code_actions theme=cursor<CR>", "Code actions"}
       }
     }
 }, { mode = "v" })
@@ -89,7 +89,7 @@ which_key.register({
     },
     c = {
       name = "+code",
-      a = { "<cmd>Telescope lsp_code_actions<CR>", "Actions" },
+      a = { "<cmd>Telescope lsp_code_actions theme=cursor<CR>", "Actions" },
       f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Formatting" },
       r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
       l = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Line diagnostics" },
