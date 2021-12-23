@@ -82,6 +82,7 @@ which_key.register({
     f = {
       name = "+find",
       f = { "<cmd>Telescope find_files<CR>", "File" },
+      g = { "<cmd>Telescope git_files<CR>", "File" },
       l = { "<cmd>Telescope live_grep<CR>", "Live grep" },
       d = { "<cmd>Telescope diagnostics<CR>", "Diagnostics" },
       s = { "<cmd>Telescope lsp_workspace_symbols<CR>", "Symbols" },
