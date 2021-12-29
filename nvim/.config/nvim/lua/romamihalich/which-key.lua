@@ -81,8 +81,8 @@ which_key.register({
     q = { "<cmd>bd!<CR>", "Close current buffer" },
     f = {
       name = "+find",
-      f = { "<cmd>Telescope find_files<CR>", "File" },
-      g = { "<cmd>Telescope git_files<CR>", "File" },
+      f = { "<cmd>Telescope find_files<CR>", "Files" },
+      g = { "<cmd>Telescope git_files<CR>", "Git files" },
       l = { "<cmd>Telescope live_grep<CR>", "Live grep" },
       d = { "<cmd>Telescope diagnostics<CR>", "Diagnostics" },
       s = { "<cmd>Telescope lsp_workspace_symbols<CR>", "Symbols" },
