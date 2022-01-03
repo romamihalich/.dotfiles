@@ -10,7 +10,7 @@ nvim_tree.setup{
   hijack_netrw        = true,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
-  auto_close          = false,
+  auto_close          = true,
   open_on_tab         = false,
   hijack_cursor       = true,
   update_cwd          = true,
@@ -19,7 +19,7 @@ nvim_tree.setup{
     auto_open = true,
   },
   diagnostics = {
-    enable = false,
+    enable = true,
     icons = {
       hint = "",
       info = "",
@@ -28,7 +28,7 @@ nvim_tree.setup{
     }
   },
   update_focused_file = {
-    enable      = false,
+    enable      = true,
     update_cwd  = false,
     ignore_list = {}
   },
@@ -42,7 +42,7 @@ nvim_tree.setup{
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
     timeout = 500,
   },
   view = {
