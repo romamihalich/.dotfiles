@@ -62,6 +62,8 @@ return packer.startup(function(use)
     use 'LunarVim/onedarker.nvim'
 
     use 'puremourning/vimspector'
+    use 'mfussenegger/nvim-dap'
+    use 'rcarriga/nvim-dap-ui'
 
     -- Fuzzy finder
     use 'nvim-lua/popup.nvim'

@@ -14,7 +14,7 @@ require "romamihalich.lsp"
 require "romamihalich.nvim-tree"
 require "romamihalich.nvim-treesitter"
 require "romamihalich.telescope"
-require "romamihalich.vimspector"
+require "romamihalich.nvim-dap"
 require "romamihalich.which-key"
 
 require "romamihalich.autocommands"
