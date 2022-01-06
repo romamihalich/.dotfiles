@@ -117,10 +117,8 @@ which_key.register({
     },
     d = {
       name = "+debug",
-      c = { "<cmd> lua require'dap'.continue()<CR>", "Continue" },
       p = { "<cmd> lua require'dap'.pause()<CR>", "Pause" },
       q = { "<cmd> lua require'dap'.close()<CR>", "Close" },
-      b = { "<cmd> lua require'dap'.toggle_breakpoint()<CR>", "Toggle breakpoint" },
       h = { "<cmd> lua require'dap.ui.widgets'.hover()<CR>", "Hover" },
       e = { "<cmd> lua require'dapui'.toggle()<CR>", "Toggle sidebar" },
     },

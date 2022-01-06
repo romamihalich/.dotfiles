@@ -38,3 +38,12 @@ keymap("n", "f", "<Plug>Sneak_f", opts)
 keymap("n", "F", "<Plug>Sneak_F", opts)
 keymap("n", "t", "<Plug>Sneak_t", opts)
 keymap("n", "T", "<Plug>Sneak_T", opts)
+
+-- dap
+keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)
+keymap("n", "<F7>", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("n", "<F10>", ":lua require'dap'.step_over()<CR>", opts)
+keymap("n", "<F11>", ":lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<F12>", ":lua require'dap'.step_out()<CR>", opts)
+-- nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+-- nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
