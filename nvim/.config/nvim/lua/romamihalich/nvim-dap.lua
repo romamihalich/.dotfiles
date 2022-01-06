@@ -3,6 +3,8 @@ if not status_ok then
     return
 end
 
+vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
+
 local debuggers_path = os.getenv('HOME') .. '/.local/share/nvim/debuggers'
 
 dap.adapters.netcoredbg = {
