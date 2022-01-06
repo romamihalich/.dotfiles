@@ -41,7 +41,7 @@ keymap("n", "T", "<Plug>Sneak_T", opts)
 
 -- dap
 keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)
-keymap("n", "<F7>", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("n", "<F9>", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
 keymap("n", "<F10>", ":lua require'dap'.step_over()<CR>", opts)
 keymap("n", "<F11>", ":lua require'dap'.step_into()<CR>", opts)
 keymap("n", "<F12>", ":lua require'dap'.step_out()<CR>", opts)
