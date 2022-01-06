@@ -61,7 +61,6 @@ return packer.startup(function(use)
     use 'gruvbox-community/gruvbox'
     use 'LunarVim/onedarker.nvim'
 
-    use 'puremourning/vimspector'
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
 
