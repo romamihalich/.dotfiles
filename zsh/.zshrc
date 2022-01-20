@@ -32,7 +32,7 @@ setopt interactive_comments
 # History in cache directory:
 HISTSIZE=10000000
 SAVEHIST=10000000
-# HISTFILE=~/.cache/zsh/history
+HISTFILE=~/.cache/zsh/history
 
 # enable only git 
 zstyle ':vcs_info:*' enable git 
