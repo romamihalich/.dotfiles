@@ -19,6 +19,7 @@ local options = {
     timeoutlen = 250,
     splitright = true,
     termguicolors = true,
+    langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz",
 }
 
 for k, v in pairs(options) do
