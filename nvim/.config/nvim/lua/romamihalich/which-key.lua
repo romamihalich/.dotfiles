@@ -92,9 +92,9 @@ which_key.register({
       a = { "<cmd>Telescope lsp_code_actions theme=cursor<CR>", "Actions" },
       f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Formatting" },
       r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-      l = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Line diagnostics" },
-      j = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Next diagnostic" },
-      k = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", "Prev diagnostic" },
+      l = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line diagnostics" },
+      j = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagnostic" },
+      k = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Prev diagnostic" },
     },
     g = {
       name = "+GTD",
