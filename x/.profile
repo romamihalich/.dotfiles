@@ -12,6 +12,8 @@ export EDITOR="$VISUAL"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # set typematic delay and rate
 xset r rate 300 50 &
+# disable mouse acceleratoion
+xset m 0 0
 
 sxhkd &
 udiskie &
