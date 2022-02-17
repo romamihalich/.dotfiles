@@ -33,12 +33,6 @@ keymap("v", "p", "\"_dP", opts)
 
 keymap("t", "<Esc>", "<C-\\><C-n>", opts)
 
--- TODO: move or delete
-keymap("n", "f", "<Plug>Sneak_f", opts)
-keymap("n", "F", "<Plug>Sneak_F", opts)
-keymap("n", "t", "<Plug>Sneak_t", opts)
-keymap("n", "T", "<Plug>Sneak_T", opts)
-
 -- dap
 keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)
 keymap("n", "<F9>", ":lua require'dap'.toggle_breakpoint()<CR>", opts)

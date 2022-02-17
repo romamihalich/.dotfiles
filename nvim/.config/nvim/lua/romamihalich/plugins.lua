@@ -55,8 +55,6 @@ return packer.startup(function(use)
 
     use { 'rrethy/vim-hexokinase', run = 'make hexokinase' }
 
-    use 'justinmk/vim-sneak'
-
     -- Color schemes
     use 'gruvbox-community/gruvbox'
     use 'LunarVim/onedarker.nvim'
