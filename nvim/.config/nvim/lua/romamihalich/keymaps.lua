@@ -32,6 +32,10 @@ keymap("n", "<leader>n", ":nohlsearch<CR>", opts)
 keymap("v", "p", "\"_dP", opts)
 
 keymap("t", "<Esc>", "<C-\\><C-n>", opts)
+keymap("t", "<C-h>", "<C-\\><C-n><c-w>h", opts)
+-- keymap("t", "<C-l>", "<C-\\><C-n><c-w>l", opts)
+keymap("t", "<C-j>", "<C-\\><C-n><c-w>j", opts)
+keymap("t", "<C-k>", "<C-\\><C-n><c-w>k", opts)
 
 -- dap
 keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)
