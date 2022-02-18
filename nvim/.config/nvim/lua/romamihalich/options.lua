@@ -18,6 +18,7 @@ local options = {
     mouse= "a",
     timeoutlen = 250,
     splitright = true,
+    splitbelow = true,
     termguicolors = true,
     langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz",
 }
