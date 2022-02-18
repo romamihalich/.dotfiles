@@ -8,13 +8,6 @@ if not telescope_actions_status_ok then
   return
 end
 
-local project_status_ok, project = pcall(require, "project_nvim")
-if not project_status_ok then
-  return
-end
-
-project.setup {}
-
 telescope.setup{
   defaults = {
     mappings = {
@@ -38,5 +31,4 @@ telescope.setup{
      }
    }
 }
-telescope.load_extension('projects')
 telescope.load_extension('fzf')

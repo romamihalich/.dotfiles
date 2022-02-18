@@ -5,7 +5,6 @@ require "romamihalich.colorscheme"
 
 require "romamihalich.cmp"
 require "romamihalich.Comment"
-require "romamihalich.dashboard"
 require "romamihalich.gtd"
 require "romamihalich.hexokinase"
 require "romamihalich.lualine"

@@ -86,10 +86,6 @@ return packer.startup(function(use)
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-    -- Dashboard
-    use 'glepnir/dashboard-nvim'
-    use 'ahmedkhalf/project.nvim'
-
     -- Status line
     use 'hoob3rt/lualine.nvim'
     use 'kyazdani42/nvim-web-devicons'
