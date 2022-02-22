@@ -3,6 +3,16 @@ if not status_ok then
   return
 end
 
+local last_command = " "
+function run_shell_command()
+    vim.ui.input({ prompt = "command:", default = last_command }, function(inp)
+        if inp then
+            last_command = inp
+            vim.cmd('sp +term\\ ' .. last_command:gsub(" ", "\\ "))
+        end
+    end)
+end
+
 which_key.setup {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
@@ -79,6 +89,7 @@ which_key.register({
   ["<leader>"] = {
     e = { "<cmd>NvimTreeToggle<CR>", "Explorer toggle" },
     q = { "<cmd>bd!<CR>", "Close current buffer" },
+    r = { "<cmd>lua run_shell_command()<CR>", "Run a shell command" },
     f = {
       name = "+find",
       f = { "<cmd>Telescope find_files<CR>", "Files" },
