@@ -12,12 +12,19 @@ telescope.setup{
   defaults = {
     mappings = {
       i = {
-        ["<esc>"] = actions.close
+        ["<esc>"] = actions.close,
+        ["<tab>"] = actions.move_selection_next,
+        ["<s-tab>"] = actions.move_selection_previous,
       }
     },
-    layout_strategy = 'horizontal',
+    preview = false,
+    layout_strategy = 'bottom_pane',
     layout_config = {
-      horizontal = { prompt_position = 'top' }
+      horizontal = { prompt_position = 'top' },
+      bottom_pane = {
+        height = 15,
+        prompt_position = "top"
+      },
     },
     sorting_strategy = 'ascending',
   },
