@@ -9,6 +9,11 @@ nvim_lsp_installer.on_server_ready(function(server)
         capabilities = require("romamihalich.lsp.handlers").capabilities,
     }
 
+    local settings_ok, settings = pcall(require, "romamihalich.lsp.server-settings." .. server.name)
+    if settings_ok then
+        opts = vim.tbl_deep_extend("force", settings, opts)
+    end
+
     server:setup(opts)
 end)
 
