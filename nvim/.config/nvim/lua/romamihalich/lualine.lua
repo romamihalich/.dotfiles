@@ -17,6 +17,14 @@ local diagnostics = function()
   return msg
 end
 
+local encoding = function ()
+    local enc = vim.opt.fileencoding:get()
+    if enc == "utf-8" then
+        return ""
+    end
+    return enc
+end
+
 lualine.setup {
   options = {
     icons_enabled = true,
@@ -40,8 +48,16 @@ lualine.setup {
         always_visible = false,
       },
       {diagnostics, icon = ' LSP:'},
-      'encoding',
-      'fileformat',
+      {encoding},
+      {
+        'fileformat',
+        symbols = {
+          -- unix = '', -- e712
+          unix = '',
+          dos = '',  -- e70f
+          mac = '',  -- e711
+        }
+      },
       'filetype'
     },
     lualine_y = {'progress'},
