@@ -23,7 +23,7 @@ lualine.setup {
     theme = 'onedark',
     component_separators = {'', ''},
     section_separators = {'', ''},
-    disabled_filetypes = {}
+    disabled_filetypes = {'NvimTree'}
   },
   sections = {
     lualine_a = {'mode'},
