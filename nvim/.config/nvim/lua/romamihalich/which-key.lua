@@ -112,7 +112,6 @@ which_key.register({
       n = {"<cmd>GtdNew<CR>", "New" },
       r = {"<cmd>GtdReview<CR>", "Review" }
     },
-    [";"] = { "<cmd>Dashboard<CR>", "Dashboard" },
     o = {
       name = "+open",
       t = { "<cmd>!$TERMINAL --working-directory \"$PWD\"&<CR><CR>", "Terminal" },
