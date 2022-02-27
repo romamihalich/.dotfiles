@@ -58,6 +58,8 @@ return packer.startup(function(use)
     -- Color schemes
     use 'gruvbox-community/gruvbox'
     use 'LunarVim/onedarker.nvim'
+    use 'navarasu/onedark.nvim'
+    use 'EdenEast/nightfox.nvim'
 
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
