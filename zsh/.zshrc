@@ -85,7 +85,7 @@ bindkey '^[[P' delete-char
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-alias ls='ls -h --color=auto'
+alias ls='ls -h --color=auto --group-directories-first'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
