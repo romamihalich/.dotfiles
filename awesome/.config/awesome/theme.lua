@@ -9,9 +9,9 @@ local theme = {}
 
 theme.font          = "Hack Nerd Font 12"
 
-theme.bg_normal     = "#222D31"
+theme.bg_normal     = "#1e2127"
 theme.bg_focus      = "#535d6c"
-theme.bg_urgent     = "#ff0000"
+theme.bg_urgent     = "#ab4642"
 theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
 
