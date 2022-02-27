@@ -28,7 +28,6 @@ keymap("n", "<C-j>", "<c-w>j", opts)
 keymap("n", "<C-k>", "<c-w>k", opts)
 keymap("v", ">", ">gv", opts)
 keymap("v", "<", "<gv", opts)
-keymap("n", "<leader>n", ":nohlsearch<CR>", opts)
 keymap("v", "p", "\"_dP", opts)
 
 keymap("t", "<Esc>", "<C-\\><C-n>", opts)

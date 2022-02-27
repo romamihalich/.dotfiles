@@ -51,6 +51,8 @@ return packer.startup(function(use)
 
     use 'tpope/vim-surround'
 
+    use 'romainl/vim-cool'
+
     use 'windwp/nvim-autopairs'
 
     use { 'rrethy/vim-hexokinase', run = 'make hexokinase' }
