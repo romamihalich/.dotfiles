@@ -8,6 +8,7 @@ require('onedark').setup {
 		Search     = {fg = "#ffffff", bg = "$search_blue", },
 		IncSearch  = {fg = "#ffffff", bg = "$search_blue", },
 		Substitute = {fg = "#ffffff", bg = "$search_orange", },
+        TSPunctBracket = {fg = "#abb2bf"}
     }
 }
 require('onedark').load()
