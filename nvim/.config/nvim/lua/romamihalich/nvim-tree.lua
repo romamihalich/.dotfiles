@@ -3,8 +3,6 @@ if not status_ok then
 	return
 end
 
-vim.cmd [[let g:nvim_tree_quit_on_open = 1]]
-
 nvim_tree.setup{
   disable_netrw       = true,
   hijack_netrw        = true,
