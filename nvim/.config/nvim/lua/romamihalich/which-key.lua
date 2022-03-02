@@ -90,9 +90,11 @@ which_key.register({
     e = { "<cmd>NvimTreeToggle<CR>", "Explorer toggle" },
     q = { "<cmd>bd!<CR>", "Close current buffer" },
     r = { "<cmd>lua run_shell_command()<CR>", "Run a shell command" },
+    H = { "<cmd>cd %:p:h | pwd<CR>", "Cd here" },
     f = {
       name = "+find",
       f = { "<cmd>Telescope find_files<CR>", "Files" },
+      r = { "<cmd>Telescope oldfiles<CR>", "Recent files" },
       g = { "<cmd>Telescope git_files<CR>", "Git files" },
       l = { "<cmd>Telescope live_grep<CR>", "Live grep" },
       d = { "<cmd>Telescope diagnostics<CR>", "Diagnostics" },
@@ -101,7 +103,7 @@ which_key.register({
       -- grouped=true
       -- default_selection_index=2
       -- files=bool
-      o = { "<cmd>Telescope file_browser cwd_to_path=true grouped=true default_selection_index=2<CR>", "File browser" }
+      o = { "<cmd>Telescope file_browser cwd_to_path=true grouped=true<CR>", "File browser" }
     },
     c = {
       name = "+code",
