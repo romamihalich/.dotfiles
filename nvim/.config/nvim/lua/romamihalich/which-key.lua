@@ -97,6 +97,11 @@ which_key.register({
       l = { "<cmd>Telescope live_grep<CR>", "Live grep" },
       d = { "<cmd>Telescope diagnostics<CR>", "Diagnostics" },
       s = { "<cmd>Telescope lsp_workspace_symbols<CR>", "Symbols" },
+      -- cwd_to_path=true
+      -- grouped=true
+      -- default_selection_index=2
+      -- files=bool
+      o = { "<cmd>Telescope file_browser cwd_to_path=true grouped=true default_selection_index=2<CR>", "File browser" }
     },
     c = {
       name = "+code",

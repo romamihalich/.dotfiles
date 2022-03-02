@@ -71,6 +71,7 @@ return packer.startup(function(use)
     use 'nvim-lua/plenary.nvim'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'nvim-telescope/telescope.nvim'
+    use 'nvim-telescope/telescope-file-browser.nvim'
 
     -- LSP
     use 'neovim/nvim-lspconfig'
