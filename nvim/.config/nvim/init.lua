@@ -18,3 +18,4 @@ require "romamihalich.nvim-dap"
 require "romamihalich.which-key"
 
 require "romamihalich.autocommands"
+require "romamihalich.alpha"
