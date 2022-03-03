@@ -41,6 +41,8 @@ return packer.startup(function(use)
     -- My plugins here
     use "wbthomason/packer.nvim" -- Have packer manage itself
 
+    use 'lewis6991/impatient.nvim'
+
     use 'kyazdani42/nvim-tree.lua'
 
     use 'ThePrimeagen/vim-be-good'

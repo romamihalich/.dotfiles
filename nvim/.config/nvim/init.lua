@@ -1,3 +1,4 @@
+require "impatient".enable_profile()
 require "romamihalich.options"
 require "romamihalich.keymaps"
 require "romamihalich.plugins"
