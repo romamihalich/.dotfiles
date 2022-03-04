@@ -39,6 +39,19 @@ telescope.setup{
     file_browser = {
       theme = "ivy",
       mappings = {
+        ["i"] = {
+            [":"] = function (...)
+                local action_state = require "telescope.actions.state"
+                local fb_utils = require "telescope._extensions.file_browser.utils"
+                local picker = action_state.get_current_picker(...)
+                local finder = picker.finder
+                local path = finder.path
+                vim.cmd("cd " .. path)
+                fb_utils.redraw_border_title(picker)
+                picker:refresh(finder, { reset_prompt = true, multi = picker._multi })
+                print "[telescope] Changed nvim's current working directory"
+            end
+        },
         -- ["i"] = { },
         -- ["n"] = { },
       }
