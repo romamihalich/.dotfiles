@@ -99,3 +99,9 @@ cmp.setup({
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
 })
+
+cmp.setup.cmdline(':', {
+  sources = {
+    { name = 'cmdline', keyword_length = 3 }
+  }
+})
