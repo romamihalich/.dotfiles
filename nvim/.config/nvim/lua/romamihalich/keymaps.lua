@@ -24,6 +24,8 @@ keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
 keymap("n", "s", ":%s/", opts)
 keymap("v", "s", ":s/", opts)
 
+keymap("v", "t", ":Tabularize /", opts)
+
 keymap("n", "Y", "y$", opts)
 keymap("n", "<C-h>", "<c-w>h", opts)
 keymap("n", "<C-l>", "<c-w>l", opts)
