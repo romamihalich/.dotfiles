@@ -20,6 +20,7 @@ local options = {
     splitright = true,
     splitbelow = true,
     termguicolors = true,
+    undofile = true,
     langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz",
 }
 
