@@ -5,7 +5,7 @@ end
 
 nvim_lsp_installer.on_server_ready(function(server)
     local opts = {
-        on_attach = require("romamihalich.lsp.handlers").on_attach,
+        on_attach = require("romamihalich.lsp.handlers").get_on_attach(server.name),
         capabilities = require("romamihalich.lsp.handlers").capabilities,
     }
 

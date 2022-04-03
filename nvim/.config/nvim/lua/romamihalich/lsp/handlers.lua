@@ -43,7 +43,15 @@ M.setup = function()
     })
 end
 
-M.on_attach = function(client, bufnr) end
+local on_attaches = {
+    omnisharp = function(client, bufnr)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', "<cmd>lua require('omnisharp_extended').telescope_lsp_definitions()<CR>", { noremap=true, silent=true })
+    end
+}
+
+M.get_on_attach = function(server_name)
+    return on_attaches[server_name] or function(client, bufnr) end
+end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 

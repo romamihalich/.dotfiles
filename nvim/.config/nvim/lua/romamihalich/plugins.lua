@@ -79,6 +79,9 @@ return packer.startup(function(use)
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
 
+    -- C#
+    use 'Hoffs/omnisharp-extended-lsp.nvim'
+
     -- Autocomplete
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
