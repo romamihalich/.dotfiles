@@ -466,7 +466,7 @@ awful.rules.rules = {
           "Wpa_gui",
           "veromix",
           "xtightvncviewer",
-          "Sxiv",
+          -- "Sxiv",
           "Pcmanfm",
           "mpv",
           "calamares",
