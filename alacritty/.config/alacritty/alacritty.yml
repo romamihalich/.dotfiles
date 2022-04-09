@@ -24,6 +24,10 @@ font:
 window:
   opacity: 0.85
 
+cursor:
+  vi_mode_style:
+    shape: Block
+
 # colors:
 #   # manjaro's defalut
 #   # Normal colors
