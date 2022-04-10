@@ -13,6 +13,11 @@ function run_shell_command()
     end)
 end
 
+function dap_close()
+    require'dap'.close()
+    require'dapui'.close()
+end
+
 which_key.setup {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
@@ -135,7 +140,7 @@ which_key.register({
     d = {
       name = "+debug",
       p = { "<cmd> lua require'dap'.pause()<CR>", "Pause" },
-      q = { "<cmd> lua require'dap'.close()<CR>", "Close" },
+      q = { "<cmd> lua dap_close()<CR>", "Close" },
       h = { "<cmd> lua require'dap.ui.widgets'.hover()<CR>", "Hover" },
       e = { "<cmd> lua require'dapui'.toggle()<CR>", "Toggle sidebar" },
     },
