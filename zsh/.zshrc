@@ -91,9 +91,12 @@ alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
+alias du='du -h'
 alias free='free -m'                      # show sizes in MB
 alias q="exit"
 alias conf='cd ~/.dotfiles && nvim -c ":Telescope git_files"'
+alias v=vifm
+alias o='xdg-open'
 
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
