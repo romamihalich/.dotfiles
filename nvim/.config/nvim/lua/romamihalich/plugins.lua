@@ -96,6 +96,7 @@ return packer.startup(function(use)
     use 'rafamadriz/friendly-snippets'
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'windwp/nvim-ts-autotag' }
 
     -- Status line
     use 'hoob3rt/lualine.nvim'
