@@ -19,3 +19,4 @@ require "romamihalich.which-key"
 
 require "romamihalich.autocommands"
 require "romamihalich.alpha"
+require "romamihalich.rest-nvim"
