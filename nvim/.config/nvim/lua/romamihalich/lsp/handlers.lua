@@ -46,6 +46,9 @@ end
 local on_attaches = {
     omnisharp = function(client, bufnr)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', "<cmd>lua require('omnisharp_extended').telescope_lsp_definitions()<CR>", { noremap=true, silent=true })
+    end,
+    tsserver = function(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
     end
 }
 
