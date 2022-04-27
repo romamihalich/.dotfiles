@@ -71,7 +71,7 @@ M.which_key_visual = {
     ["<leader>"] = {
       c = {
         name = "+code",
-        a = { ":Telescope lsp_range_code_actions theme=cursor<CR>", "Code actions"}
+        a = { "<cmd>lua vim.lsp.buf.range_code_action()<CR>", "Code actions"}
       }
     }
 }
@@ -98,7 +98,7 @@ M.which_key_normal = {
     },
     c = {
       name = "+code",
-      a = { "<cmd>Telescope lsp_code_actions theme=cursor<CR>", "Actions" },
+      a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Actions" },
       f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Formatting" },
       r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
       l = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line diagnostics" },
