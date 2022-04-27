@@ -20,7 +20,6 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- TODO: mv move
 keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
 
 keymap("n", "s", ":%s/", opts)
