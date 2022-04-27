@@ -74,6 +74,7 @@ return packer.startup(function(use)
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
+    use 'nvim-telescope/telescope-ui-select.nvim'
 
     -- LSP
     use 'neovim/nvim-lspconfig'
@@ -112,7 +113,7 @@ return packer.startup(function(use)
 
     use 'goolord/alpha-nvim'
 
-    use { 'NTBBloodbath/rest.nvim' }
+    use 'NTBBloodbath/rest.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
