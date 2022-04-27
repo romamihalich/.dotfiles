@@ -563,6 +563,20 @@ client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
 
+-- sloppy focus when changing tags
+function focus_client_under_mouse()
+    gears.timer( {  timeout = 0.1,
+                    autostart = true,
+                    single_shot = true,
+                    callback =  function()
+                                    local n = mouse.object_under_pointer()
+                                    if n ~= nil and n ~= client.focus then
+                                        client.focus = n end
+                                    end
+                  } )
+end
+screen.connect_signal( "tag::history::update", focus_client_under_mouse )
+
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
