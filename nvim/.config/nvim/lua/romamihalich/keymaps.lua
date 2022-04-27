@@ -5,7 +5,7 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -20,7 +20,7 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
-keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
+keymap("n", "K", vim.lsp.buf.hover, opts)
 
 keymap("n", "s", ":%s/", opts)
 keymap("v", "s", ":s/", opts)
@@ -43,11 +43,11 @@ keymap("t", "<C-j>", "<C-\\><C-n><c-w>j", opts)
 keymap("t", "<C-k>", "<C-\\><C-n><c-w>k", opts)
 
 -- dap
-keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)
-keymap("n", "<F9>", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
-keymap("n", "<F10>", ":lua require'dap'.step_over()<CR>", opts)
-keymap("n", "<F11>", ":lua require'dap'.step_into()<CR>", opts)
-keymap("n", "<F12>", ":lua require'dap'.step_out()<CR>", opts)
+keymap("n", "<F5>", function () require'dap'.continue() end, opts)
+keymap("n", "<F9>", function () require'dap'.toggle_breakpoint() end, opts)
+keymap("n", "<F10>", function () require'dap'.step_over() end, opts)
+keymap("n", "<F11>", function () require'dap'.step_into() end, opts)
+keymap("n", "<F12>", function () require'dap'.step_out() end, opts)
 -- nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 -- nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 
