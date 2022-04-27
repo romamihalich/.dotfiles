@@ -53,7 +53,7 @@ keymap("n", "<F12>", ":lua require'dap'.step_out()<CR>", opts)
 -- nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 
 local last_command = " "
-function run_shell_command()
+M.run_shell_command = function()
     vim.ui.input({ prompt = "command:", default = last_command }, function(inp)
         if inp then
             last_command = inp
@@ -62,7 +62,7 @@ function run_shell_command()
     end)
 end
 
-function dap_close()
+M.dap_close = function()
     require'dap'.close()
     require'dapui'.close()
 end
@@ -80,7 +80,7 @@ M.which_key_normal = {
   ["<leader>"] = {
     e = { "<cmd>NvimTreeToggle<CR>", "Explorer toggle" },
     q = { "<cmd>bd!<CR>", "Close current buffer" },
-    r = { "<cmd>lua run_shell_command()<CR>", "Run a shell command" },
+    r = { "<cmd>lua require'romamihalich.keymaps'.run_shell_command()<CR>", "Run a shell command" },
     H = { "<cmd>cd %:p:h | pwd<CR>", "Cd here" },
     f = {
       name = "+find",
@@ -126,7 +126,7 @@ M.which_key_normal = {
     d = {
       name = "+debug",
       p = { "<cmd> lua require'dap'.pause()<CR>", "Pause" },
-      q = { "<cmd> lua dap_close()<CR>", "Close" },
+      q = { "<cmd> lua require'romamihalich.keymaps'.dap_close()<CR>", "Close" },
       h = { "<cmd> lua require'dap.ui.widgets'.hover()<CR>", "Hover" },
       e = { "<cmd> lua require'dapui'.toggle()<CR>", "Toggle sidebar" },
     },
