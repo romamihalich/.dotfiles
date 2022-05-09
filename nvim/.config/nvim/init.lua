@@ -1,4 +1,4 @@
-require "impatient".enable_profile()
+pcall(require, "impatient")
 require "romamihalich.options"
 require "romamihalich.keymaps"
 require "romamihalich.plugins"

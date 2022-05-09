@@ -1,16 +1,19 @@
 local lspkind_status_ok, lspkind = pcall(require, "lspkind")
 if not lspkind_status_ok then
+    vim.api.nvim_err_writeln("Can't load 'lspkind'")
 	return
 end
 
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
+    vim.api.nvim_err_writeln("Can't load 'cmp'")
 	return
 end
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
-  return
+    vim.api.nvim_err_writeln("Can't load 'luasnip'")
+    return
 end
 
 require("luasnip/loaders/from_vscode").lazy_load()

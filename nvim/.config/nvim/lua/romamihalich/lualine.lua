@@ -1,5 +1,6 @@
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
+    vim.api.nvim_err_writeln("Can't load 'lualine'")
     return
 end
 

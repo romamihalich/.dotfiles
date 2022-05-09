@@ -1,5 +1,6 @@
 local status_ok, dap = pcall(require, "dap")
 if not status_ok then
+    vim.api.nvim_err_writeln("Can't load 'dap'")
     return
 end
 
@@ -67,6 +68,7 @@ dap.configurations.python = {
 
 local ui_status_ok, dapui = pcall(require, "dapui")
 if not ui_status_ok then
+    vim.api.nvim_err_writeln("Can't load 'dapui'")
     return
 end
 

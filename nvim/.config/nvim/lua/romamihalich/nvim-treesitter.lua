@@ -1,6 +1,7 @@
 local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
-  return
+    vim.api.nvim_err_writeln("Can't load 'nvim-treesitter.configs'")
+    return
 end
 
 configs.setup {

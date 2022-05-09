@@ -1,11 +1,13 @@
 local telescope_status_ok, telescope = pcall(require, "telescope")
 if not telescope_status_ok then
-  return
+    vim.api.nvim_err_writeln("Can't load 'telescope'")
+    return
 end
 
 local telescope_actions_status_ok, actions = pcall(require, "telescope.actions")
 if not telescope_actions_status_ok then
-  return
+    vim.api.nvim_err_writeln("Can't load 'telescope.actions'")
+    return
 end
 
 telescope.setup{

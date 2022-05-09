@@ -27,7 +27,7 @@ autocmd("BufWritePost", {
 autocmd("FileType", {
     pattern = "http",
     callback = function ()
-        vim.keymap.set('n', '<CR>', require'rest-nvim'.run, { silent = true, buffer = true })
+        vim.keymap.set('n', '<CR>', function() require'rest-nvim'.run() end, { silent = true, buffer = true })
     end,
 })
 

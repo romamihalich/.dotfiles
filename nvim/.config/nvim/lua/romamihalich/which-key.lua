@@ -1,6 +1,7 @@
 local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
-  return
+    vim.api.nvim_err_writeln("Can't load 'which-key'")
+    return
 end
 
 which_key.setup {

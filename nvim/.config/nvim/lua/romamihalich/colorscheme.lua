@@ -1,4 +1,10 @@
-require('onedark').setup {
+local status_ok, onedark = pcall(require, "onedark")
+if not status_ok then
+    vim.api.nvim_err_writeln("Can't load 'onedark'")
+    return
+end
+
+onedark.setup {
     style = 'darker',
     colors = {
         search_blue   = "#5e81ac",
@@ -11,4 +17,4 @@ require('onedark').setup {
         TSPunctBracket = {fg = "#abb2bf"}
     }
 }
-require('onedark').load()
+onedark.load()
