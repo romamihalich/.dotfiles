@@ -115,6 +115,10 @@ return packer.startup(function(use)
 
     use 'NTBBloodbath/rest.nvim'
 
+    use { '/home/romamihalich/projects/csharp-nvim', config = function() require'csharp-nvim'.setup() end}
+
+    use { "folke/trouble.nvim", config = function() require("trouble").setup { } end }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
