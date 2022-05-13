@@ -98,5 +98,11 @@ alias conf='cd ~/.dotfiles && nvim -c ":Telescope git_files"'
 alias v=vifm
 alias o='xdg-open'
 
+
+# Search command history with 'Up' and 'Down' keys like in fish
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh 2> /dev/null
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
 # Load syntax highlighting; should be last.
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2> /dev/null
