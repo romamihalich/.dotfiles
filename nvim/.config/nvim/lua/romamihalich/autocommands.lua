@@ -9,6 +9,8 @@ autocmd("TermOpen", { command = "startinsert" })
 
 autocmd("VimEnter", { command = ':silent exec "!kill -s SIGWINCH $PPID"'})
 
+autocmd("VimEnter", { command = 'set iminsert=0'})
+
 autocmd("BufWritePost", {
     pattern = { "*Xresources", "*Xdefaults" },
     command = "!xrdb %"
@@ -19,11 +21,11 @@ autocmd("BufWritePost", {
     command = "!pkill -USR1 -x sxhkd"
 })
 
-autocmd("BufWritePost", {
-    pattern = "*.tex",
-    command = 'silent! execute "!latexmk -pdf \'%\' >/dev/null 2>&1 &" | redraw!'
-})
-
+-- autocmd("BufWritePost", {
+--     pattern = "*.tex",
+--     command = 'silent! execute "!latexmk -pdf \'%\' >/dev/null 2>&1 &" | redraw!'
+-- })
+--
 autocmd("FileType", {
     pattern = "http",
     callback = function ()
