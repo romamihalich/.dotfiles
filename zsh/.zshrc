@@ -85,7 +85,8 @@ bindkey '^[[P' delete-char
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-alias ls='ls -h --color=auto --group-directories-first'
+alias ls='exa --group-directories-first'
+alias ll='ls -l'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
@@ -98,6 +99,9 @@ alias conf='cd ~/.dotfiles && nvim -c ":Telescope git_files"'
 alias v=vifm
 alias o='xdg-open'
 
+# syntax highlight when tab compleating
+eval "$(dircolors)"
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # Search command history with 'Up' and 'Down' keys like in fish
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh 2> /dev/null
