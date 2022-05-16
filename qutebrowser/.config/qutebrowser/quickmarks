@@ -73,3 +73,6 @@ nvim LunarVim/Neovim-from-scratch: A Neovim config designed from scratch to be u
 nvim RRethy/vim-hexokinase: hexokinase.vim - (Neo)Vim plugin for asynchronously displaying the colours in the file (#rrggbb, #rgb, rgb(a)? functions, hsl(a)? functions, web colours, custom patterns) https://github.com/RRethy/vim-hexokinase
 nvim wbthomason/packer.nvim: A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config https://github.com/wbthomason/packer.nvim
 nvim rockerBOO/awesome-neovim: Collections of awesome neovim plugins. https://github.com/rockerBOO/awesome-neovim#file-explorer
+roadmap https://github.com/MoienTajik/AspNetCore-Developer-Roadmap
+aspmetanit https://metanit.com/sharp/aspnet6/13.6.php
+dotfiles tjdevries https://github.com/tjdevries/config_manager
