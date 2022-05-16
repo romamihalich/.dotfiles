@@ -26,12 +26,6 @@ autocmd("BufWritePost", {
 --     command = 'silent! execute "!latexmk -pdf \'%\' >/dev/null 2>&1 &" | redraw!'
 -- })
 --
-autocmd("FileType", {
-    pattern = "http",
-    callback = function ()
-        vim.keymap.set('n', '<CR>', function() require'rest-nvim'.run() end, { silent = true, buffer = true })
-    end,
-})
 
 vim.cmd [[
     augroup yank_highlight
