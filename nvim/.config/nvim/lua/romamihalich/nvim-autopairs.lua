@@ -4,8 +4,11 @@ if not status_ok then
     return
 end
 
+-- local disable_in_visualblock = false -- disable when insert after visual block mode
+-- local enable_afterquote = true  -- add bracket pairs after quote
 nvim_autopairs.setup{
-    enable_moveright = false
+    enable_moveright = false,
+    disable_in_macro = true,
 }
 
 -- local cmp_autopairs = require "nvim-autopairs.completion.cmp"
