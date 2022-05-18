@@ -1,8 +1,4 @@
-local status_ok, which_key = pcall(require, "which-key")
-if not status_ok then
-    vim.api.nvim_err_writeln("Can't load 'which-key'")
-    return
-end
+local which_key = require'which-key'
 
 which_key.setup {
   plugins = {

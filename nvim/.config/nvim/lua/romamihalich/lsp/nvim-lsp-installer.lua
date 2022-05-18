@@ -1,10 +1,4 @@
-local status_ok, nvim_lsp_installer = pcall(require, "nvim-lsp-installer")
-if not status_ok then
-    vim.api.nvim_err_writeln("Can't load 'nvim-lsp-installer'")
-    return
-end
-
-nvim_lsp_installer.on_server_ready(function(server)
+require'nvim-lsp-installer'.on_server_ready(function(server)
     local opts = {
         on_attach = require("romamihalich.lsp.handlers").get_on_attach(server.name),
         capabilities = require("romamihalich.lsp.handlers").capabilities,
@@ -17,4 +11,3 @@ nvim_lsp_installer.on_server_ready(function(server)
 
     server:setup(opts)
 end)
-

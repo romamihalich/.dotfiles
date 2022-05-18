@@ -1,12 +1,6 @@
-local status_ok, nvim_autopairs = pcall(require, "nvim-autopairs")
-if not status_ok then
-    vim.api.nvim_err_writeln("Can't load 'nvim-autopairs'")
-    return
-end
-
 -- local disable_in_visualblock = false -- disable when insert after visual block mode
 -- local enable_afterquote = true  -- add bracket pairs after quote
-nvim_autopairs.setup{
+require'nvim-autopairs'.setup{
     enable_moveright = false,
     disable_in_macro = true,
 }

@@ -1,10 +1,4 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then
-    vim.api.nvim_err_writeln("Can't load 'nvim-treesitter.configs'")
-    return
-end
-
-configs.setup {
+require'nvim-treesitter.configs'.setup {
   ensure_installed = "all", -- one of "all"
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing

@@ -1,10 +1,4 @@
-local status_ok, nvim_tree = pcall(require, "nvim-tree")
-if not status_ok then
-    vim.api.nvim_err_writeln("Can't load 'nvim-tree'")
-	return
-end
-
-nvim_tree.setup{
+require'nvim-tree'.setup{
   disable_netrw       = true,
   hijack_netrw        = true,
   open_on_setup       = false,

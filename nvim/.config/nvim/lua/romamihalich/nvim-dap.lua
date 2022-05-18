@@ -1,8 +1,4 @@
-local status_ok, dap = pcall(require, "dap")
-if not status_ok then
-    vim.api.nvim_err_writeln("Can't load 'dap'")
-    return
-end
+local dap = require'dap'
 
 vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
 
@@ -116,4 +112,3 @@ dapui.setup({
 dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
 dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
 dap.listeners.before.event_exited["dapui_config"] = function() dapui.close() end
-

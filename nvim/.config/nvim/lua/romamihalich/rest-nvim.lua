@@ -1,10 +1,4 @@
-local status_ok, rest = pcall(require, "rest-nvim")
-if not status_ok then
-    vim.api.nvim_err_writeln("Can't load 'rest-nvim'")
-    return
-end
-
-rest.setup({
+require'rest-nvim'.setup({
   -- Open request results in a horizontal split
   result_split_horizontal = false,
   -- Skip SSL verification, useful for unknown certificates
@@ -26,4 +20,3 @@ rest.setup({
   custom_dynamic_variables = {},
   yank_dry_run = true,
 })
-
