@@ -92,7 +92,7 @@ return packer.startup(function(use)
             'hrsh7th/cmp-cmdline',
             'onsails/lspkind-nvim',
             -- Snippets
-            'L3MON4D3/LuaSnip',
+            { 'L3MON4D3/LuaSnip', config = function () require'romamihalich.luasnip' end },
             'saadparwaiz1/cmp_luasnip',
             'rafamadriz/friendly-snippets',
         }
