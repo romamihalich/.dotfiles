@@ -17,62 +17,15 @@ vgu moodle https://e.vyatsu.ru/?redirect=0
 vgu msteams https://teams.microsoft.com/_#/school/teams-grid/General?ctx=teamsGrid
 vgu lk https://new.vyatsu.ru/account/
 vgu outlook https://www.office.com/?auth=2&home=1
-films 2001 год: Космическая одиссея (1968) – смотреть онлайн – КиноПоиск https://www.kinopoisk.ru/film/380/
-films Костяной томагавк – смотреть онлайн – КиноПоиск https://www.kinopoisk.ru/film/715046/
-films Старикам тут не место – смотреть онлайн – КиноПоиск https://www.kinopoisk.ru/film/195434/
-films Таксист – смотреть онлайн – КиноПоиск https://www.kinopoisk.ru/film/358/
-films Знакомьтесь, Джо Блэк – смотреть онлайн – КиноПоиск https://www.kinopoisk.ru/film/5059/
-anime Блич смотреть онлайн — Аниме https://animego.org/anime/blich-k170
-anime Моя геройская академия смотреть онлайн — Аниме https://animego.org/anime/moya-geroyskaya-akademiya-k294
 progrm https://openedu.ru/my/#timeline=current
 progrm Открытое образование - Программирование на C# https://openedu.ru/course/urfu/CSHARP/
 progrm Открытое образование - Технологии программирования https://openedu.ru/course/urfu/PRGRMM/
-nvim puremourning/vimspector: vimspector - A multi-language debugging system for Vim https://github.com/puremourning/vimspector
-nvim justinmk/vim-sneak: The missing motion for Vim https://github.com/justinmk/vim-sneak
-nvim kyazdani42/nvim-tree.lua: A file explorer tree for neovim written in lua https://github.com/kyazdani42/nvim-tree.lua
-nvim neovim/nvim-lspconfig: Quickstart configurations for the Nvim LSP client https://github.com/neovim/nvim-lspconfig
 dotfiles Derek Taylor / Dotfiles · GitLab https://gitlab.com/dwt1/dotfiles
 dotfiles ThePrimeagen/.dotfiles https://github.com/ThePrimeagen/.dotfiles
 dotfiles aqez/dotfiles: Dotfiles for linux https://github.com/aqez/dotfiles
-otd OpenTabletDriver/OpenTabletDriver: Open source, cross-platform, user-mode tablet driver https://github.com/OpenTabletDriver/OpenTabletDriver
-otd Linux FAQ · OpenTabletDriver/OpenTabletDriver Wiki https://github.com/OpenTabletDriver/OpenTabletDriver/wiki/Linux-FAQ#argumentoutofrangeexception-value-0-15
-Installing osu! on Linux with low-latency [2021] · форум | osu! https://osu.ppy.sh/community/forums/topics/1248084?n=1
 Кировский филиал ЭнергосбыТ Плюс https://kirov.esplus.ru/
-i3: i3 User’s Guide https://i3wm.org/docs/userguide.html
-awesome https://awesomewm.org/doc/api/
-awesome copycats https://github.com/lcpz/awesome-copycats
-nvim hrsh7th/nvim-cmp: A completion plugin for neovim coded in Lua. https://github.com/hrsh7th/nvim-cmp/
-nvim nvim-treesitter/nvim-treesitter: Nvim Treesitter configurations and abstraction layer https://github.com/nvim-treesitter/nvim-treesitter
-nvim glepnir/dashboard-nvim: vim dashboard https://github.com/glepnir/dashboard-nvim
-nvim hoob3rt/lualine.nvim: A blazing fast and easy to configure neovim statusline plugin written in pure lua. https://github.com/hoob3rt/lualine.nvim
-matplotlib https://matplotlib.org/
 dotfiles BrodieRobertson/dotfiles: Various configuration files for programs that I use https://github.com/BrodieRobertson/dotfiles
-nvim nvim-telescope/telescope.nvim: Find, Filter, Preview, Pick. All lua, all the time. https://github.com/nvim-telescope/telescope.nvim
-glyph https://www.nerdfonts.com/cheat-sheet?set=nf-dev-
-love https://love2d.org/wiki/Main_Page
-awesome lain https://github.com/lcpz/lain
-nvim folke/which-key.nvim: 💥 Create key bindings that stick. WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing. https://github.com/folke/which-key.nvim
-films Я, робот – смотреть онлайн – КиноПоиск https://www.kinopoisk.ru/film/4886/
-rasp petr https://www.vyatsu.ru/reports/schedule/prepod/889_1_08112021_21112021.html
-rasp https://www.vyatsu.ru/reports/schedule/Group/16100_1_20122021_02012022.pdf
-elec-book https://www.dns-shop.ru/product/396ef4da49843330/6-elektronnaa-kniga-digma-e63s-seryj/
-nvim williamboman/nvim-lsp-installer: Companion plugin for nvim-lspconfig that allows you to seamlessly install LSP servers locally with :LspInstall. (also supports Windows) https://github.com/williamboman/nvim-lsp-installer
-owc https://osu.ppy.sh/wiki/en/Tournaments/OWC/2021
-films Не дыши – смотреть онлайн – КиноПоиск https://www.kinopoisk.ru/film/910327/
-films torr http://torrfan.org/
-anime Семь смертных грехов: Яростное правосудие (ТВ Сериал, 4 сезон) смотреть онлайн — Аниме https://animego.org/anime/sem-smertnyh-grehov-yarostnoe-pravosudie-k1667
-cls https://superuser.com/questions/142318/how-can-i-view-the-wmclass-attribute-of-a-window-in-xorg-linux
-hyp https://www.youtube.com/channel/UC2oIn4q3AiBK5-I-NbqMvFw/videos
 vk me https://vk.com/id399898327
-nvim numToStr/Comment.nvim: // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more https://github.com/numToStr/Comment.nvim
-nvim windwp/nvim-autopairs: autopairs for neovim written by lua https://github.com/windwp/nvim-autopairs
 dotfiles ChristianChiarulli/Machfiles: The dotfiles you see in all my videos https://github.com/ChristianChiarulli/Machfiles
-flags parsing https://stackoverflow.com/questions/9642732/parsing-command-line-arguments-in-c
-nvim jose-elias-alvarez/null-ls.nvim: Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua. https://github.com/jose-elias-alvarez/null-ls.nvim
-nvim LunarVim/Neovim-from-scratch: A Neovim config designed from scratch to be understandable https://github.com/LunarVim/Neovim-from-scratch
-nvim RRethy/vim-hexokinase: hexokinase.vim - (Neo)Vim plugin for asynchronously displaying the colours in the file (#rrggbb, #rgb, rgb(a)? functions, hsl(a)? functions, web colours, custom patterns) https://github.com/RRethy/vim-hexokinase
-nvim wbthomason/packer.nvim: A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config https://github.com/wbthomason/packer.nvim
-nvim rockerBOO/awesome-neovim: Collections of awesome neovim plugins. https://github.com/rockerBOO/awesome-neovim#file-explorer
 roadmap https://github.com/MoienTajik/AspNetCore-Developer-Roadmap
-aspmetanit https://metanit.com/sharp/aspnet6/13.6.php
 dotfiles tjdevries https://github.com/tjdevries/config_manager
