@@ -106,11 +106,6 @@ M.which_key_normal = {
       j = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagnostic" },
       k = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Prev diagnostic" },
     },
-    g = {
-      name = "+GTD",
-      n = {"<cmd>GtdNew<CR>", "New" },
-      r = {"<cmd>GtdReview<CR>", "Review" }
-    },
     o = {
       name = "+open",
       t = { "<cmd>!$TERMINAL --working-directory \"$PWD\"&<CR><CR>", "Terminal" },

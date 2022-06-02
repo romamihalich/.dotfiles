@@ -40,7 +40,6 @@ return packer.startup(function(use)
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
 
-    use {'fifi2/gtd.vim', config = function() require'romamihalich.gtd' end}
 
     use {'windwp/nvim-autopairs', config = function() require'romamihalich.nvim-autopairs' end }
 
