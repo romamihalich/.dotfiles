@@ -40,6 +40,7 @@ return packer.startup(function(use)
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
 
+    use 'vimwiki/vimwiki'
 
     use {'windwp/nvim-autopairs', config = function() require'romamihalich.nvim-autopairs' end }
 
@@ -122,6 +123,8 @@ return packer.startup(function(use)
     use { '/home/romamihalich/projects/csharp-nvim', config = function() require'csharp-nvim'.setup() end}
 
     use { "folke/trouble.nvim", config = function() require("trouble").setup { } end }
+
+    use { "folke/todo-comments.nvim", config = function() require("todo-comments").setup { } end }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
