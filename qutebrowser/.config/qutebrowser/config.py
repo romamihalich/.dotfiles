@@ -345,6 +345,7 @@ config.bind('d', 'tab-close')
 config.bind('e', 'open -t {primary}')
 config.bind('gJ', 'tab-move -')
 config.bind('gK', 'tab-move +')
+config.bind('<Ctrl-r>', 'restart')
 
 config.unbind('.')
 ru_keys = 'йцукенгшщзхъфывапролджэячсмитьбю.'+'ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,'
