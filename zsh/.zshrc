@@ -99,6 +99,7 @@ alias conf='cd ~/.dotfiles && nvim -c ":Telescope git_files"'
 alias v=vifm
 alias o='xdg-open'
 alias lg='lazygit'
+alias ts='tmux-sessionizer'
 
 # syntax highlight when tab compleating
 eval "$(dircolors)"
