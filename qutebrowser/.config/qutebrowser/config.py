@@ -333,8 +333,8 @@ c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?q={}', 'd': 'ht
 c.url.start_pages = ['/home/romamihalich/.config/qutebrowser/homepage.html']
 
 # Bindings for normal mode
-config.bind(',M', 'hint links spawn --detach mpv {hint-url}')
-config.bind(',m', 'spawn --detach mpv {url}')
+config.bind(',M', "hint links spawn --detach mpv {hint-url} --geometry='20%+100%+90%'")
+config.bind(',m', "spawn --detach mpv {url} --geometry='20%+100%+90%'")
 config.bind(';O', 'hint links tab-bg')
 config.bind('J', 'tab-prev')
 config.bind('K', 'tab-next')

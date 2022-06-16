@@ -468,7 +468,6 @@ awful.rules.rules = {
           "xtightvncviewer",
           -- "Sxiv",
           "Pcmanfm",
-          "mpv",
           "calamares",
           "Galculator",
           "Nitrogen",
@@ -489,6 +488,18 @@ awful.rules.rules = {
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
       }, properties = { floating = true, placement = awful.placement.no_overlap+awful.placement.no_offscreen+awful.placement.centered }},
+
+    { rule_any = {
+        class = {
+          "mpv",
+        },
+      }, properties = {
+            floating = true,
+            placement = awful.placement.no_offscreen,
+            sticky = true,
+            ontop = true,
+        }
+    },
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
