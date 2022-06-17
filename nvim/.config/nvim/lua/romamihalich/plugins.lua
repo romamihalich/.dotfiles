@@ -40,6 +40,13 @@ return packer.startup(function(use)
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
 
+    use {'lyokha/vim-xkbswitch', config = function()
+        vim.cmd [[
+            let g:XkbSwitchEnabled = 1
+            let g:XkbSwitchLib = '/home/romamihalich/software/xkb-switch/build/libxkbswitch.so'
+        ]]
+    end}
+
     use 'vimwiki/vimwiki'
 
     use {'windwp/nvim-autopairs', config = function() require'romamihalich.nvim-autopairs' end }

@@ -9,8 +9,6 @@ autocmd("TermOpen", { command = "startinsert" })
 
 autocmd("VimEnter", { command = ':silent exec "!kill -s SIGWINCH $PPID"'})
 
-autocmd("VimEnter", { command = 'set iminsert=0'})
-
 autocmd("BufWritePost", {
     pattern = { "*Xresources", "*Xdefaults" },
     command = "!xrdb %"
@@ -20,12 +18,6 @@ autocmd("BufWritePost", {
     pattern = "*sxhkdrc",
     command = "!pkill -USR1 -x sxhkd"
 })
-
--- autocmd("BufWritePost", {
---     pattern = "*.tex",
---     command = 'silent! execute "!latexmk -pdf \'%\' >/dev/null 2>&1 &" | redraw!'
--- })
---
 
 vim.cmd [[
     augroup yank_highlight
