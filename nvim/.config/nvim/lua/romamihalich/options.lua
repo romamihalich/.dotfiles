@@ -23,6 +23,9 @@ local options = {
     termguicolors = true,
     undofile = true,
     langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz",
+    keymap = "russian-jcukenwin",
+    iminsert = 0,
+    imsearch = 0,
 }
 
 for k, v in pairs(options) do

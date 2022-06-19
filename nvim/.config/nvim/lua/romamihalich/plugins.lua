@@ -44,6 +44,8 @@ return packer.startup(function(use)
         vim.cmd [[
             let g:XkbSwitchEnabled = 1
             let g:XkbSwitchLib = '/home/romamihalich/software/xkb-switch/build/libxkbswitch.so'
+            let g:XkbSwitchAssistNKeymap = 1    " for commands r and f
+            let g:XkbSwitchAssistSKeymap = 1    " for search lines
         ]]
     end}
 

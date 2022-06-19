@@ -20,8 +20,6 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
-keymap("i", "<C-l>", "<C-^>", opts)
-
 keymap("n", "K", vim.lsp.buf.hover, opts)
 
 keymap("n", "Y", "y$", opts)
