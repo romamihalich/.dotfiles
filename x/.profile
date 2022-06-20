@@ -19,3 +19,4 @@ sxhkd &
 udiskie &
 nitrogen --restore &
 start_conky_maia &
+sbxkb &

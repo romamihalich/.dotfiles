@@ -14,6 +14,6 @@ run picom
 #ff-theme-util &
 #fix_xcursor &
 run nm-applet
-run pamac-tray
-run xfce4-clipman
+# run pamac-tray
+# run xfce4-clipman
 run volumeicon
