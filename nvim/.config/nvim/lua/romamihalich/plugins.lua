@@ -129,8 +129,6 @@ return packer.startup(function(use)
 
     use {'NTBBloodbath/rest.nvim', config = function() require'romamihalich.rest-nvim' end }
 
-    use { '/home/romamihalich/projects/csharp-nvim', config = function() require'csharp-nvim'.setup() end}
-
     use { "folke/trouble.nvim", config = function() require("trouble").setup { } end }
 
     use { "folke/todo-comments.nvim", config = function() require("todo-comments").setup { } end }
