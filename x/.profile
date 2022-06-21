@@ -18,5 +18,5 @@ xset m 0 0
 sxhkd &
 udiskie &
 nitrogen --restore &
-start_conky_maia &
+conky &
 sbxkb &
