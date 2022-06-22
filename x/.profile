@@ -15,6 +15,8 @@ xset r rate 300 50 &
 # disable mouse acceleratoion
 xset m 0 0
 
+setxkbmap -layout "us,ru"
+
 udiskie &
 nitrogen --restore &
 conky &
