@@ -44,23 +44,14 @@ do
 end
 -- }}}
 
--- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
--- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 beautiful.init(os.getenv("HOME").."/.config/awesome/theme.lua")
 
--- This is used later as the default terminal and editor to run.
 terminal = os.getenv("TERMINAL") or "alacritty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .." -e ".. editor
 
 browser = os.getenv("BROWSER") or "qutebrowser"
 
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod1"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -256,18 +247,7 @@ globalkeys = gears.table.join(
               {description = "swap with next client by index", group = "client"}),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
-    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
-              {description = "jump to urgent client", group = "client"}),
-    -- awful.key({ modkey,           }, "Tab",
-    --     function ()
-    --         awful.client.focus.history.previous()
-    --         if client.focus then
-    --             client.focus:raise()
-    --         end
-    --     end,
-    --     {description = "go back", group = "client"}),
 
-    -- Standard program
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Control"   }, "q", awesome.quit,
@@ -329,37 +309,14 @@ clientkeys = gears.table.join(
               {description = "close", group = "client"}),
     awful.key({ modkey,         }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
-    awful.key({ modkey, "Shift" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
-              {description = "move to master", group = "client"}),
-    -- awful.key({ modkey,           }, "p",      function (c) c:move_to_screen()               end,
-              -- {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
-    -- awful.key({ modkey,           }, "m",
-    --     function (c)
-    --         -- The client currently has the input focus, so it cannot be
-    --         -- minimized, since minimized clients can't have the focus.
-    --         c.minimized = true
-    --     end ,
-    --     {description = "minimize", group = "client"}),
     awful.key({ modkey,           }, "m",
         function (c)
             c.maximized = not c.maximized
             c:raise()
         end ,
         {description = "(un)maximize", group = "client"}),
-    -- awful.key({ modkey, "Control" }, "m",
-        -- function (c)
-            -- c.maximized_vertical = not c.maximized_vertical
-            -- c:raise()
-        -- end ,
-        -- {description = "(un)maximize vertically", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "m",
-        function (c)
-            c.maximized_horizontal = not c.maximized_horizontal
-            c:raise()
-        end ,
-        {description = "(un)maximize horizontally", group = "client"}),
     awful.key({ modkey,           }, "s",
         function (c)
           c.sticky = not c.sticky
