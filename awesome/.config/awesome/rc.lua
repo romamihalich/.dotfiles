@@ -217,9 +217,9 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal, false) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey,           }, "d", function () awful.spawn("dmenu_run_history") end,
+    awful.key({ modkey,           }, "d", function () awful.spawn("dmenu_run_history", false) end,
               {description = "open a launcher", group = "launcher"}),
     awful.key({ modkey,           }, "F2", function () awful.spawn(browser) end,
               {description = "open a browser", group = "launcher"}),
