@@ -54,6 +54,8 @@ terminal = os.getenv("TERMINAL") or "alacritty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .." -e ".. editor
 
+browser = os.getenv("BROWSER") or "qutebrowser"
+
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
@@ -224,8 +226,15 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-    awful.key({ modkey, "Shift"   }, "s",      hotkeys_popup.show_help,
-              {description="show help", group="awesome"}),
+    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+              {description = "open a terminal", group = "launcher"}),
+    awful.key({ modkey,           }, "d", function () awful.spawn("dmenu_run_history") end,
+              {description = "open a launcher", group = "launcher"}),
+    awful.key({ modkey,           }, "F2", function () awful.spawn(browser) end,
+              {description = "open a browser", group = "launcher"}),
+    awful.key({ modkey,           }, "F3", function () awful.spawn("pcmanfm") end,
+              {description = "open a pcmanfm", group = "launcher"}),
+
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 

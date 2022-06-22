@@ -15,7 +15,6 @@ xset r rate 300 50 &
 # disable mouse acceleratoion
 xset m 0 0
 
-sxhkd &
 udiskie &
 nitrogen --restore &
 conky &
