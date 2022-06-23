@@ -225,6 +225,8 @@ globalkeys = gears.table.join(
               {description = "open a browser", group = "launcher"}),
     awful.key({ modkey,           }, "F3", function () awful.spawn("pcmanfm") end,
               {description = "open a pcmanfm", group = "launcher"}),
+    awful.key({ modkey,           }, "n", function () awful.spawn("alacritty --working-directory vimwiki -e nvim -c :VimwikiIndex", false) end,
+              {description = "open a vimwiki", group = "launcher"}),
 
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
