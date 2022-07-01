@@ -34,6 +34,8 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
 
+[ -f $HISTFILE ] || touch $HISTFILE
+
 # enable only git 
 zstyle ':vcs_info:*' enable git 
 
