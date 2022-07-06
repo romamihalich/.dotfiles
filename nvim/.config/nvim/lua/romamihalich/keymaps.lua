@@ -30,6 +30,7 @@ keymap("n", "<C-k>", "<c-w>k", opts)
 keymap("v", ">", ">gv", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", "p", "\"_dP", opts)
+keymap("v", "*", 'y/"<CR>')
 
 keymap("t", "<Esc>", "<C-\\><C-n>", opts)
 keymap("t", "<C-h>", "<C-\\><C-n><c-w>h", opts)
