@@ -215,6 +215,9 @@ c.content.pdfjs = True
 #   - bottom
 c.downloads.position = 'bottom'
 
+c.downloads.location.directory = '~/Downloads'
+c.downloads.location.suggestion = 'both'
+
 # Editor (and arguments) to use for the `edit-*` commands. The following
 # placeholders are defined:  * `{file}`: Filename of the file to be
 # edited. * `{line}`: Line in which the caret is found in the text. *
