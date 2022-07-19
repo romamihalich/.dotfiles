@@ -329,7 +329,19 @@ c.url.default_page = '/home/romamihalich/.config/qutebrowser/homepage.html'
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?q={}', 'd': 'https://duckduckgo.com/?q={}', 'aw': 'https://wiki.archlinux.org/?search={}', 'gh': 'https://github.com/search?q={}', 'so': 'https://stackoverflow.com/search?q={}', 'tran': 'https://translate.google.com/?sl=en&tl=ru&text={}&op=translate', 'ub': 'https://www.urbandictionary.com/define.php?term={}', 'yt': 'https://www.youtube.com/results?search_query={}', 'dns': 'https://www.dns-shop.ru/search/?q={}', 'kinopoisk': 'https://www.kinopoisk.ru/index.php?kp_query={}', 'osu': 'https://osu.ppy.sh/beatmapsets?q={}'}
+c.url.searchengines = {
+    'DEFAULT': 'https://www.google.com/search?q={}',
+    'd': 'https://duckduckgo.com/?q={}',
+    'aw': 'https://wiki.archlinux.org/?search={}',
+    'gh': 'https://github.com/search?q={}',
+    'so': 'https://stackoverflow.com/search?q={}',
+    'tran': 'https://translate.google.com/?sl=en&tl=ru&text={}&op=translate',
+    'ub': 'https://www.urbandictionary.com/define.php?term={}',
+    'yt': 'https://www.youtube.com/results?search_query={}',
+    'dns': 'https://www.dns-shop.ru/search/?q={}',
+    'kinopoisk': 'https://www.kinopoisk.ru/index.php?kp_query={}',
+    'osu': 'https://osu.ppy.sh/beatmapsets?q={}'
+}
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
