@@ -51,6 +51,7 @@ editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .." -e ".. editor
 
 browser = os.getenv("BROWSER") or "qutebrowser"
+file_manager = "thunar"
 
 modkey = "Mod1"
 
@@ -91,7 +92,7 @@ shutdownmenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open pcmanfm", "pcmanfm" },
+                                    { "open " .. file_manager, file_manager },
                                     { "open terminal", terminal },
                                     { "shutdown...", shutdownmenu, nil }
                                   }
@@ -223,8 +224,8 @@ globalkeys = gears.table.join(
               {description = "open a launcher", group = "launcher"}),
     awful.key({ modkey,           }, "F2", function () awful.spawn(browser) end,
               {description = "open a browser", group = "launcher"}),
-    awful.key({ modkey,           }, "F3", function () awful.spawn("pcmanfm") end,
-              {description = "open a pcmanfm", group = "launcher"}),
+    awful.key({ modkey,           }, "F3", function () awful.spawn(file_manager) end,
+              {description = "open " .. file_manager, group = "launcher"}),
     awful.key({ modkey,           }, "n", function () awful.spawn("alacritty --working-directory vimwiki -e nvim -c :VimwikiIndex", false) end,
               {description = "open a vimwiki", group = "launcher"}),
 
