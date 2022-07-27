@@ -51,7 +51,7 @@ editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .." -e ".. editor
 
 browser = os.getenv("BROWSER") or "qutebrowser"
-file_manager = "thunar"
+file_manager = "pcmanfm"
 
 modkey = "Mod1"
 
@@ -437,6 +437,7 @@ awful.rules.rules = {
           "xtightvncviewer",
           -- "Sxiv",
           "Pcmanfm",
+          "Thunar",
           "calamares",
           "Galculator",
           "Nitrogen",
