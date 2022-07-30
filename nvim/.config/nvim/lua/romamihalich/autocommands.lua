@@ -27,3 +27,8 @@ vim.cmd [[
         endif
     augroup END
 ]]
+
+autocmd("FileType", {
+    pattern = "*",
+    command = "set formatoptions-=o",
+})
