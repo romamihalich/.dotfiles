@@ -66,8 +66,14 @@ return packer.startup(function(use)
         'EdenEast/nightfox.nvim'
     }
 
-    use {'mfussenegger/nvim-dap', config = function() require'romamihalich.nvim-dap' end }
-    use 'rcarriga/nvim-dap-ui'
+    -- DAP
+    use {
+        'mfussenegger/nvim-dap',
+        config = function() require'romamihalich.dap.nvim-dap' end,
+        requires = {
+            { 'rcarriga/nvim-dap-ui', config = function() require'romamihalich.dap.nvim-dap-ui' end }
+        }
+    }
 
     -- Fuzzy finder
     use {
@@ -86,7 +92,6 @@ return packer.startup(function(use)
         config = function() require'romamihalich.lsp.handlers'.setup() end,
         requires = {
             'Hoffs/omnisharp-extended-lsp.nvim',
-            -- {'williamboman/nvim-lsp-installer', config = function() require'romamihalich.lsp.nvim-lsp-installer' end }
             {
                 'williamboman/mason.nvim',
                 config = function() require'romamihalich.lsp.mason' end,
