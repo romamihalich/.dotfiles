@@ -81,6 +81,13 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
+# auto cd in dir on exit from lf
+LFCD="/usr/share/lf/lfcd.sh"
+if [ -f "$LFCD" ]; then
+    source "$LFCD"
+    alias lf=lfcd
+fi
+
 bindkey '^[[P' delete-char
 
 # Edit line in vim with ctrl-e:
