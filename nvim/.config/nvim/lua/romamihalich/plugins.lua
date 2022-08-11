@@ -66,7 +66,7 @@ return packer.startup(function(use)
         'EdenEast/nightfox.nvim'
     }
 
-    use {'mfussenegger/nvim-dap', config = function() require'romamihalich.nvim-dap' end }
+    use {'mfussenegger/nvim-dap', config = function() require'romamihalich.dap.nvim-dap' end }
     use 'rcarriga/nvim-dap-ui'
 
     -- Fuzzy finder
