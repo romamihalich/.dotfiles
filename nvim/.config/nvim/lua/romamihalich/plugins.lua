@@ -86,7 +86,12 @@ return packer.startup(function(use)
         config = function() require'romamihalich.lsp.handlers'.setup() end,
         requires = {
             'Hoffs/omnisharp-extended-lsp.nvim',
-            {'williamboman/nvim-lsp-installer', config = function() require'romamihalich.lsp.nvim-lsp-installer' end }
+            -- {'williamboman/nvim-lsp-installer', config = function() require'romamihalich.lsp.nvim-lsp-installer' end }
+            {
+                'williamboman/mason.nvim',
+                config = function() require'romamihalich.lsp.mason' end,
+                requires = { 'williamboman/mason-lspconfig.nvim' }
+            },
         }
     }
 

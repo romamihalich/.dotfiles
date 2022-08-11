@@ -2,11 +2,11 @@ local dap = require'dap'
 
 vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
 
-local debuggers_path = os.getenv('HOME') .. '/.local/share/nvim/debuggers'
+local debuggers_path = os.getenv('HOME') .. '/.local/share/nvim/mason/bin/'
 
 dap.adapters.netcoredbg = {
   type = 'executable',
-  command = debuggers_path .. '/netcoredbg/netcoredbg',
+  command = debuggers_path .. 'netcoredbg',
   args = {'--interpreter=vscode'}
 }
 
@@ -32,8 +32,8 @@ dap.configurations.cs = {
 
 dap.adapters.python = {
   type = 'executable';
-  command = debuggers_path .. '/debugpy/bin/python';
-  args = { '-m', 'debugpy.adapter' };
+  command = debuggers_path .. 'debugpy-adapter';
+  -- args = { '-m', 'debugpy.adapter' };
 }
 
 dap.configurations.python = {
@@ -94,11 +94,11 @@ dapui.setup({
       size = 40,
       position = "left", -- Can be "left", "right", "top", "bottom"
     },
-    -- {
-    --   elements = { "repl" },
-    --   size = 10,
-    --   position = "bottom", -- Can be "left", "right", "top", "bottom"
-    -- },
+    {
+      elements = { "repl" },
+      size = 10,
+      position = "bottom", -- Can be "left", "right", "top", "bottom"
+    },
   },
   floating = {
     max_height = nil, -- These can be integers or a float between 0 and 1.
