@@ -10,3 +10,4 @@ function run {
 run picom
 run nm-applet
 run volumeicon
+run sbxkb
