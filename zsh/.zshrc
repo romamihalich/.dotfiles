@@ -82,11 +82,20 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # auto cd in dir on exit from lf
-LFCD="/usr/share/lf/lfcd.sh"
-if [ -f "$LFCD" ]; then
-    source "$LFCD"
-    alias lf=lfcd
-fi
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
+alias lf=lfcd
 
 bindkey '^[[P' delete-char
 
