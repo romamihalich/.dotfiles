@@ -206,7 +206,7 @@ config.set('content.notifications.enabled', False, 'https://pdalife.to')
 # still be downloaded by clicking the download button in the pdf.js
 # viewer.
 # Type: Bool
-c.content.pdfjs = True
+c.content.pdfjs = False
 
 # Where to show the downloaded files.
 # Type: VerticalPosition
