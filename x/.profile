@@ -21,3 +21,4 @@ udiskie &
 nitrogen --restore &
 conky &
 sbxkb &
+/home/romamihalich/software/LoLoSwitcher/loloswitcher &
