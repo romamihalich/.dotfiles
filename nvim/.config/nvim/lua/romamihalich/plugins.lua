@@ -130,7 +130,16 @@ return packer.startup(function(use)
 
     use 'ThePrimeagen/harpoon'
 
-    use 'tpope/vim-fugitive'
+    -- Git
+    use {
+        'sindrets/diffview.nvim',
+        {
+            'lewis6991/gitsigns.nvim',
+            config = function()
+                require('gitsigns').setup()
+            end
+        }
+    }
 
     use 'godlygeek/tabular'
 
