@@ -72,5 +72,6 @@ which_key.register({
         o = { name = "+open" },
         h = { name = "+harpoon" },
         d = { name = "+debug" },
+        g = { name = "+git" },
     },
 })
