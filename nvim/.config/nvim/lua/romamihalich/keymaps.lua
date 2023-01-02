@@ -53,7 +53,7 @@ end
 vim.keymap.set("v", "<leader>=", ":Tabularize /", {
     noremap = true,
     silent = false,
-    desc = "Tabularize"
+    desc = "Tabularize (\\zs)"
 })
 
 keymap("n", "<leader>q", "<cmd>bd!<CR>", "Close current buffer")
