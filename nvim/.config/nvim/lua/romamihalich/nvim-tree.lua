@@ -60,3 +60,5 @@ require'nvim-tree'.setup{
     }
   },
 }
+
+require'romamihalich.keymaps'.keymap("n", "<leader>e", vim.cmd.NvimTreeToggle, "Explorer toggle")

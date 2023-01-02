@@ -53,7 +53,24 @@ local on_attaches = {
 }
 
 M.get_on_attach = function(server_name)
-    return on_attaches[server_name] or function(client, bufnr) end
+    return function(client, bufnr)
+        local keymap = require'romamihalich.keymaps'.keymap
+        keymap("n",  "<leader>ca",  vim.lsp.buf.code_action,        "Actions")
+        keymap("n",  "<leader>cf",  vim.lsp.buf.formatting,         "Formatting")
+        keymap("n",  "<leader>cr",  vim.lsp.buf.rename,             "Rename")
+        keymap("n",  "<leader>cl",  vim.diagnostic.open_float,      "Line diagnostics")
+        keymap("n",  "<leader>cj",  vim.diagnostic.goto_next,       "Next diagnostic")
+        keymap("n",  "<leader>ck",  vim.diagnostic.goto_prev,       "Prev diagnostic")
+        keymap("v",  "<leader>ca",  vim.lsp.buf.range_code_action,  "Code actions")
+        keymap("n",  "gs",          vim.lsp.buf.signature_help,     "Signature help")
+        keymap("n", "gd", function() require("telescope.builtin").lsp_definitions() end, "Go to definition")
+        keymap("n", "gr", function() require("telescope.builtin").lsp_references() end, "Go to references")
+
+        local custom_hook = on_attaches[server_name]
+        if custom_hook then
+            custom_hook(client, bufnr)
+        end
+    end
 end
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -66,4 +83,3 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M
-
