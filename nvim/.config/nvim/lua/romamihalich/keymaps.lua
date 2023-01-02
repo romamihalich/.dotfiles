@@ -64,68 +64,69 @@ end
 
 M.which_key_visual = {
     ["<leader>"] = {
-      c = {
-        name = "+code",
-        a = { "<cmd>lua vim.lsp.buf.range_code_action()<CR>", "Code actions"}
-      }
-    }
+        c = {
+            name = "+code",
+            a = { "<cmd>lua vim.lsp.buf.range_code_action()<CR>", "Code actions"}
+        },
+        ["="] = { ":Tabularize /", "Tabularize" },
+    },
 }
 
 M.which_key_normal = {
-  ["<leader>"] = {
-    e = { "<cmd>NvimTreeToggle<CR>", "Explorer toggle" },
-    q = { "<cmd>bd!<CR>", "Close current buffer" },
-    r = { "<cmd>lua require'romamihalich.keymaps'.run_shell_command()<CR>", "Run a shell command" },
-    H = { "<cmd>cd %:p:h | pwd<CR>", "Cd here" },
-    f = {
-      name = "+find",
-      f = { "<cmd>Telescope find_files<CR>", "Files" },
-      r = { "<cmd>Telescope oldfiles<CR>", "Recent files" },
-      g = { "<cmd>Telescope git_files<CR>", "Git files" },
-      l = { "<cmd>Telescope live_grep<CR>", "Live grep" },
-      d = { "<cmd>Telescope diagnostics<CR>", "Diagnostics" },
-      s = { "<cmd>Telescope lsp_workspace_symbols<CR>", "Symbols" },
-      -- cwd_to_path=true
-      -- grouped=true
-      -- default_selection_index=2
-      -- files=bool
-      o = { "<cmd>Telescope file_browser cwd_to_path=true grouped=true<CR>", "File browser" }
+    ["<leader>"] = {
+        e = { "<cmd>NvimTreeToggle<CR>", "Explorer toggle" },
+        q = { "<cmd>bd!<CR>", "Close current buffer" },
+        r = { "<cmd>lua require'romamihalich.keymaps'.run_shell_command()<CR>", "Run a shell command" },
+        H = { "<cmd>cd %:p:h | pwd<CR>", "Cd here" },
+        f = {
+            name = "+find",
+            f = { "<cmd>Telescope find_files<CR>", "Files" },
+            r = { "<cmd>Telescope oldfiles<CR>", "Recent files" },
+            g = { "<cmd>Telescope git_files<CR>", "Git files" },
+            l = { "<cmd>Telescope live_grep<CR>", "Live grep" },
+            d = { "<cmd>Telescope diagnostics<CR>", "Diagnostics" },
+            s = { "<cmd>Telescope lsp_workspace_symbols<CR>", "Symbols" },
+            -- cwd_to_path=true
+            -- grouped=true
+            -- default_selection_index=2
+            -- files=bool
+            o = { "<cmd>Telescope file_browser cwd_to_path=true grouped=true<CR>", "File browser" }
+        },
+        c = {
+            name = "+code",
+            a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Actions" },
+            f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Formatting" },
+            r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+            l = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line diagnostics" },
+            j = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagnostic" },
+            k = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Prev diagnostic" },
+        },
+        o = {
+            name = "+open",
+            t = { "<cmd>!$TERMINAL --working-directory \"$PWD\"&<CR><CR>", "Terminal" },
+            c = { "<cmd>term cht.sh<CR>", "Cheet sheet" }
+        },
+        h = {
+            name = "+harpoon",
+            a = { "<cmd> lua require'harpoon.mark'.add_file()<CR>", "Add file" },
+            t = { "<cmd> lua require'harpoon.ui'.toggle_quick_menu()<CR>", "Toggle menu" },
+            h = { "<cmd> lua require'harpoon.ui'.nav_file(1)<CR>", "Nav file 1" },
+            j = { "<cmd> lua require'harpoon.ui'.nav_file(2)<CR>", "Nav file 2" },
+            k = { "<cmd> lua require'harpoon.ui'.nav_file(3)<CR>", "Nav file 3" },
+        },
+        d = {
+            name = "+debug",
+            p = { "<cmd> lua require'dap'.pause()<CR>", "Pause" },
+            q = { "<cmd> lua require'romamihalich.keymaps'.dap_close()<CR>", "Close" },
+            h = { "<cmd> lua require'dap.ui.widgets'.hover()<CR>", "Hover" },
+            e = { "<cmd> lua require'dapui'.toggle()<CR>", "Toggle sidebar" },
+        },
     },
-    c = {
-      name = "+code",
-      a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Actions" },
-      f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Formatting" },
-      r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-      l = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line diagnostics" },
-      j = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagnostic" },
-      k = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Prev diagnostic" },
-    },
-    o = {
-      name = "+open",
-      t = { "<cmd>!$TERMINAL --working-directory \"$PWD\"&<CR><CR>", "Terminal" },
-      c = { "<cmd>term cht.sh<CR>", "Cheet sheet" }
-    },
-    h = {
-      name = "+harpoon",
-      a = { "<cmd> lua require'harpoon.mark'.add_file()<CR>", "Add file" },
-      t = { "<cmd> lua require'harpoon.ui'.toggle_quick_menu()<CR>", "Toggle menu" },
-      h = { "<cmd> lua require'harpoon.ui'.nav_file(1)<CR>", "Nav file 1" },
-      j = { "<cmd> lua require'harpoon.ui'.nav_file(2)<CR>", "Nav file 2" },
-      k = { "<cmd> lua require'harpoon.ui'.nav_file(3)<CR>", "Nav file 3" },
-    },
-    d = {
-      name = "+debug",
-      p = { "<cmd> lua require'dap'.pause()<CR>", "Pause" },
-      q = { "<cmd> lua require'romamihalich.keymaps'.dap_close()<CR>", "Close" },
-      h = { "<cmd> lua require'dap.ui.widgets'.hover()<CR>", "Hover" },
-      e = { "<cmd> lua require'dapui'.toggle()<CR>", "Toggle sidebar" },
-    },
-  },
-  g = {
-    d = { "<cmd>Telescope lsp_definitions<CR>", "Go to definition" },
-    r = { "<cmd>Telescope lsp_references<CR>", "Go to references" },
-    s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help" }
-  }
+    g = {
+        d = { "<cmd>Telescope lsp_definitions<CR>", "Go to definition" },
+        r = { "<cmd>Telescope lsp_references<CR>", "Go to references" },
+        s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help" }
+    }
 }
 
 return M
