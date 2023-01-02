@@ -50,7 +50,7 @@ keymap("n", "<F12>", function () require'dap'.step_out() end)
 -- nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 
 local last_command = " "
-M.run_shell_command = function()
+local run_shell_command = function()
     vim.ui.input({ prompt = "command:", default = last_command }, function(inp)
         if inp then
             last_command = inp
@@ -59,7 +59,7 @@ M.run_shell_command = function()
     end)
 end
 
-M.dap_close = function()
+local dap_close = function()
     require'dap'.close()
     require'dapui'.close()
 end
@@ -75,7 +75,7 @@ keymap("v", "<leader>ca", vim.lsp.buf.range_code_action, "Code actions")
 
 keymap("n", "<leader>e", vim.cmd.NvimTreeToggle, "Explorer toggle")
 keymap("n", "<leader>q", "<cmd>bd!<CR>", "Close current buffer")
-keymap("n", "<leader>r", "<cmd>lua require'romamihalich.keymaps'.run_shell_command()<CR>", "Run a shell command")
+keymap("n", "<leader>r", run_shell_command, "Run a shell command")
 keymap("n", "<leader>H", "<cmd>cd %:p:h | pwd<CR>", "Cd here")
 
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", "Files")
@@ -103,26 +103,12 @@ keymap("n", "<leader>hj", "<cmd> lua require'harpoon.ui'.nav_file(2)<CR>", "Nav 
 keymap("n", "<leader>hk", "<cmd> lua require'harpoon.ui'.nav_file(3)<CR>", "Nav file 3")
 
 keymap("n", "<leader>dp", "<cmd> lua require'dap'.pause()<CR>", "Pause")
-keymap("n", "<leader>dq", "<cmd> lua require'romamihalich.keymaps'.dap_close()<CR>", "Close")
+keymap("n", "<leader>dq", dap_close, "Close")
 keymap("n", "<leader>dh", "<cmd> lua require'dap.ui.widgets'.hover()<CR>", "Hover")
 keymap("n", "<leader>de", "<cmd> lua require'dapui'.toggle()<CR>", "Toggle sidebar")
 
 keymap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", "Go to definition")
 keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", "Go to references")
 keymap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help")
-
-M.which_key_visual = {
-    ["<leader>c"] = { name = "+code" }
-}
-
-M.which_key_normal = {
-    ["<leader>"] = {
-        f = { name = "+find" },
-        c = { name = "+code" },
-        o = { name = "+open" },
-        h = { name = "+harpoon" },
-        d = { name = "+debug" },
-    },
-}
 
 return M

@@ -61,7 +61,16 @@ which_key.setup {
   },
 }
 
-local keymaps = require"romamihalich.keymaps"
+which_key.register({
+    ["<leader>c"] = { name = "+code" }
+}, { mode = "v" })
 
-which_key.register(keymaps.which_key_visual, { mode = "v" })
-which_key.register(keymaps.which_key_normal)
+which_key.register({
+    ["<leader>"] = {
+        f = { name = "+find" },
+        c = { name = "+code" },
+        o = { name = "+open" },
+        h = { name = "+harpoon" },
+        d = { name = "+debug" },
+    },
+})
