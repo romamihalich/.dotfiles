@@ -1,14 +1,16 @@
 local M = {}
 
-local opts = { noremap = true, silent = true }
-
-local term_opts = { silent = true }
-
 -- Shorten function name
-local keymap = vim.keymap.set
+local keymap = function(mode, lhs, rhs, desc)
+    vim.keymap.set(mode, lhs, rhs, {
+        noremap = true,
+        silent  = true,
+        desc    = desc,
+    })
+end
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+keymap("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -20,30 +22,30 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
-keymap("n", "K", vim.lsp.buf.hover, opts)
+keymap("n", "K", vim.lsp.buf.hover)
 
-keymap("n", "Y", "y$", opts)
-keymap("n", "<C-h>", "<c-w>h", opts)
-keymap("n", "<C-l>", "<c-w>l", opts)
-keymap("n", "<C-j>", "<c-w>j", opts)
-keymap("n", "<C-k>", "<c-w>k", opts)
-keymap("v", ">", ">gv", opts)
-keymap("v", "<", "<gv", opts)
-keymap("v", "p", "\"_dP", opts)
+keymap("n", "Y", "y$")
+keymap("n", "<C-h>", "<c-w>h")
+keymap("n", "<C-l>", "<c-w>l")
+keymap("n", "<C-j>", "<c-w>j")
+keymap("n", "<C-k>", "<c-w>k")
+keymap("v", ">", ">gv")
+keymap("v", "<", "<gv")
+keymap("v", "p", "\"_dP")
 -- keymap("v", "*", 'y/"<CR>')
 
-keymap("t", "<Esc>", "<C-\\><C-n>", opts)
-keymap("t", "<C-h>", "<C-\\><C-n><c-w>h", opts)
--- keymap("t", "<C-l>", "<C-\\><C-n><c-w>l", opts)
-keymap("t", "<C-j>", "<C-\\><C-n><c-w>j", opts)
-keymap("t", "<C-k>", "<C-\\><C-n><c-w>k", opts)
+keymap("t", "<Esc>", "<C-\\><C-n>")
+keymap("t", "<C-h>", "<C-\\><C-n><c-w>h")
+-- keymap("t", "<C-l>", "<C-\\><C-n><c-w>l")
+keymap("t", "<C-j>", "<C-\\><C-n><c-w>j")
+keymap("t", "<C-k>", "<C-\\><C-n><c-w>k")
 
 -- dap
-keymap("n", "<F5>", function () require'dap'.continue() end, opts)
-keymap("n", "<F9>", function () require'dap'.toggle_breakpoint() end, opts)
-keymap("n", "<F10>", function () require'dap'.step_over() end, opts)
-keymap("n", "<F11>", function () require'dap'.step_into() end, opts)
-keymap("n", "<F12>", function () require'dap'.step_out() end, opts)
+keymap("n", "<F5>", function () require'dap'.continue() end)
+keymap("n", "<F9>", function () require'dap'.toggle_breakpoint() end)
+keymap("n", "<F10>", function () require'dap'.step_over() end)
+keymap("n", "<F11>", function () require'dap'.step_into() end)
+keymap("n", "<F12>", function () require'dap'.step_out() end)
 -- nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 -- nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 
@@ -62,71 +64,65 @@ M.dap_close = function()
     require'dapui'.close()
 end
 
+
+vim.keymap.set("v", "<leader>=", ":Tabularize /", {
+    noremap = true,
+    silent = false,
+    desc = "Tabularize"
+})
+
+keymap("v", "<leader>ca", vim.lsp.buf.range_code_action, "Code actions")
+
+keymap("n", "<leader>e", vim.cmd.NvimTreeToggle, "Explorer toggle")
+keymap("n", "<leader>q", "<cmd>bd!<CR>", "Close current buffer")
+keymap("n", "<leader>r", "<cmd>lua require'romamihalich.keymaps'.run_shell_command()<CR>", "Run a shell command")
+keymap("n", "<leader>H", "<cmd>cd %:p:h | pwd<CR>", "Cd here")
+
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", "Files")
+keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", "Recent files")
+keymap("n", "<leader>fg", "<cmd>Telescope git_files<CR>", "Git files")
+keymap("n", "<leader>fl", "<cmd>Telescope live_grep<CR>", "Live grep")
+keymap("n", "<leader>fd", "<cmd>Telescope diagnostics<CR>", "Diagnostics")
+keymap("n", "<leader>fs", "<cmd>Telescope lsp_workspace_symbols<CR>", "Symbols")
+keymap("n", "<leader>fo", "<cmd>Telescope file_browser cwd_to_path=true grouped=true<CR>", "File browser")
+
+keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", "Actions")
+keymap("n", "<leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", "Formatting")
+keymap("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename")
+keymap("n", "<leader>cl", "<cmd>lua vim.diagnostic.open_float()<CR>", "Line diagnostics")
+keymap("n", "<leader>cj", "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagnostic")
+keymap("n", "<leader>ck", "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Prev diagnostic")
+
+keymap("n", "<leader>ot", "<cmd>!$TERMINAL --working-directory \"$PWD\"&<CR><CR>", "Terminal")
+keymap("n", "<leader>oc", "<cmd>term cht.sh<CR>", "Cheet sheet")
+
+keymap("n", "<leader>ha", "<cmd> lua require'harpoon.mark'.add_file()<CR>", "Add file")
+keymap("n", "<leader>ht", "<cmd> lua require'harpoon.ui'.toggle_quick_menu()<CR>", "Toggle menu")
+keymap("n", "<leader>hh", "<cmd> lua require'harpoon.ui'.nav_file(1)<CR>", "Nav file 1")
+keymap("n", "<leader>hj", "<cmd> lua require'harpoon.ui'.nav_file(2)<CR>", "Nav file 2")
+keymap("n", "<leader>hk", "<cmd> lua require'harpoon.ui'.nav_file(3)<CR>", "Nav file 3")
+
+keymap("n", "<leader>dp", "<cmd> lua require'dap'.pause()<CR>", "Pause")
+keymap("n", "<leader>dq", "<cmd> lua require'romamihalich.keymaps'.dap_close()<CR>", "Close")
+keymap("n", "<leader>dh", "<cmd> lua require'dap.ui.widgets'.hover()<CR>", "Hover")
+keymap("n", "<leader>de", "<cmd> lua require'dapui'.toggle()<CR>", "Toggle sidebar")
+
+keymap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", "Go to definition")
+keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", "Go to references")
+keymap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help")
+
 M.which_key_visual = {
-    ["<leader>"] = {
-        c = {
-            name = "+code",
-            a = { "<cmd>lua vim.lsp.buf.range_code_action()<CR>", "Code actions"}
-        },
-        ["="] = { ":Tabularize /", "Tabularize" },
-    },
+    ["<leader>c"] = { name = "+code" }
 }
 
 M.which_key_normal = {
     ["<leader>"] = {
-        e = { "<cmd>NvimTreeToggle<CR>", "Explorer toggle" },
-        q = { "<cmd>bd!<CR>", "Close current buffer" },
-        r = { "<cmd>lua require'romamihalich.keymaps'.run_shell_command()<CR>", "Run a shell command" },
-        H = { "<cmd>cd %:p:h | pwd<CR>", "Cd here" },
-        f = {
-            name = "+find",
-            f = { "<cmd>Telescope find_files<CR>", "Files" },
-            r = { "<cmd>Telescope oldfiles<CR>", "Recent files" },
-            g = { "<cmd>Telescope git_files<CR>", "Git files" },
-            l = { "<cmd>Telescope live_grep<CR>", "Live grep" },
-            d = { "<cmd>Telescope diagnostics<CR>", "Diagnostics" },
-            s = { "<cmd>Telescope lsp_workspace_symbols<CR>", "Symbols" },
-            -- cwd_to_path=true
-            -- grouped=true
-            -- default_selection_index=2
-            -- files=bool
-            o = { "<cmd>Telescope file_browser cwd_to_path=true grouped=true<CR>", "File browser" }
-        },
-        c = {
-            name = "+code",
-            a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Actions" },
-            f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Formatting" },
-            r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-            l = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line diagnostics" },
-            j = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagnostic" },
-            k = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Prev diagnostic" },
-        },
-        o = {
-            name = "+open",
-            t = { "<cmd>!$TERMINAL --working-directory \"$PWD\"&<CR><CR>", "Terminal" },
-            c = { "<cmd>term cht.sh<CR>", "Cheet sheet" }
-        },
-        h = {
-            name = "+harpoon",
-            a = { "<cmd> lua require'harpoon.mark'.add_file()<CR>", "Add file" },
-            t = { "<cmd> lua require'harpoon.ui'.toggle_quick_menu()<CR>", "Toggle menu" },
-            h = { "<cmd> lua require'harpoon.ui'.nav_file(1)<CR>", "Nav file 1" },
-            j = { "<cmd> lua require'harpoon.ui'.nav_file(2)<CR>", "Nav file 2" },
-            k = { "<cmd> lua require'harpoon.ui'.nav_file(3)<CR>", "Nav file 3" },
-        },
-        d = {
-            name = "+debug",
-            p = { "<cmd> lua require'dap'.pause()<CR>", "Pause" },
-            q = { "<cmd> lua require'romamihalich.keymaps'.dap_close()<CR>", "Close" },
-            h = { "<cmd> lua require'dap.ui.widgets'.hover()<CR>", "Hover" },
-            e = { "<cmd> lua require'dapui'.toggle()<CR>", "Toggle sidebar" },
-        },
+        f = { name = "+find" },
+        c = { name = "+code" },
+        o = { name = "+open" },
+        h = { name = "+harpoon" },
+        d = { name = "+debug" },
     },
-    g = {
-        d = { "<cmd>Telescope lsp_definitions<CR>", "Go to definition" },
-        r = { "<cmd>Telescope lsp_references<CR>", "Go to references" },
-        s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help" }
-    }
 }
 
 return M
