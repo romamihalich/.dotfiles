@@ -23,6 +23,7 @@ local options = {
     termguicolors = true,
     undofile = true,
     langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz",
+    wildignore = "node_modules/*,bin/*,obj/*,.git/*"
 }
 
 for k, v in pairs(options) do

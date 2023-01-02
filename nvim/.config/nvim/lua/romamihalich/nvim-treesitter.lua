@@ -11,6 +11,15 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false, -- no bold return, def, etc...
   },
   indent = { enable = true, disable = { "yaml", "python" } },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = '<c-space>',
+      -- node_incremental = '<c-space>',
+      scope_incremental = '<c-space>',
+      node_decremental = '<c-backspace>',
+    },
+  },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
