@@ -62,13 +62,13 @@ which_key.setup {
 }
 
 which_key.register({
-    ["<leader>c"] = { name = "+code" }
+    ["<leader>l"] = { name = "+LSP" }
 }, { mode = "v" })
 
 which_key.register({
     ["<leader>"] = {
         f = { name = "+find" },
-        c = { name = "+code" },
+        l = { name = "+LSP" },
         o = { name = "+open" },
         h = { name = "+harpoon" },
         d = { name = "+debug" },
