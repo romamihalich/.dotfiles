@@ -13,6 +13,7 @@ local options = {
     ignorecase = true,
     hlsearch = true,
     scrolloff = 8,
+    sidescrolloff = 8,
     swapfile = false,
     backup = false,
     signcolumn= "yes",
@@ -23,7 +24,8 @@ local options = {
     termguicolors = true,
     undofile = true,
     langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz",
-    wildignore = "node_modules/*,bin/*,obj/*,.git/*"
+    wildignore = "node_modules/*,bin/*,obj/*,.git/*",
+    cursorline = true,
 }
 
 for k, v in pairs(options) do
