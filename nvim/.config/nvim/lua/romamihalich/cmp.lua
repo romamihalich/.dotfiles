@@ -69,7 +69,13 @@ cmp.setup.cmdline(':', {
   sources = cmp.config.sources({
     { name = 'path' }
   }, {
-    { name = 'cmdline', keyword_length = 3 }
+    {
+      name = 'cmdline',
+      keyword_length = 3,
+      option = {
+        ignore_cmds = { 'Man', '!', 'vimgrep' }
+      }
+    }
   })
 })
 
