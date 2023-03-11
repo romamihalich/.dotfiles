@@ -70,9 +70,6 @@ telescope.setup{
     }
    }
 }
-telescope.load_extension('fzf')
-telescope.load_extension('file_browser')
-telescope.load_extension("ui-select")
 
 -- keymaps
 local builtin = require('telescope.builtin')
@@ -89,3 +86,7 @@ keymap("n", "<leader>fo", function()
         grouped=true,
     })
 end, "File browser")
+
+telescope.load_extension('fzf')
+telescope.load_extension('file_browser')
+telescope.load_extension("ui-select")
