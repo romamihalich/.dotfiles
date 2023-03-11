@@ -132,7 +132,8 @@ return packer.startup(function(use)
 
     -- Git
     use {
-        'sindrets/diffview.nvim',
+        'tpope/vim-fugitive',
+        {'sindrets/diffview.nvim', config = function() require'romamihalich.diffview' end},
         {
             'lewis6991/gitsigns.nvim',
             config = function()
