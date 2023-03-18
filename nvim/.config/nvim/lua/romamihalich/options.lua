@@ -34,3 +34,4 @@ end
 
 vim.opt.iskeyword:append('-')
 vim.opt.diffopt:append('iwhiteall')
+vim.opt.fillchars:append('diff: ')
