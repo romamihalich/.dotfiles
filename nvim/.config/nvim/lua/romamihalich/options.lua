@@ -32,4 +32,5 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-vim.cmd [[ set iskeyword+=- ]]
+vim.opt.iskeyword:append('-')
+vim.opt.diffopt:append('iwhiteall')

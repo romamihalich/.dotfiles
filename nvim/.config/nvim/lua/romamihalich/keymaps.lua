@@ -73,6 +73,9 @@ keymap("n", "<leader>hk", "<cmd> lua require'harpoon.ui'.nav_file(3)<CR>", "Nav 
 keymap("n", "<leader>gg", vim.cmd.DiffviewOpen, "Diffview")
 keymap("n", "<leader>gs", function() vim.cmd.Gitsigns("stage_hunk") end, "Stage hunk")
 keymap("n", "<leader>gl", function() vim.cmd.Gitsigns("blame_line") end, "Blame line")
+keymap("n", "<leader>gb", function() vim.cmd.Telescope("git_branches") end, "Git branches")
+keymap("n", "]h", function() vim.cmd.Gitsigns("next_hunk") end, "Next hunk")
+keymap("n", "[h", function() vim.cmd.Gitsigns("prev_hunk") end, "Prev hunk")
 
 M.keymap = keymap
 return M

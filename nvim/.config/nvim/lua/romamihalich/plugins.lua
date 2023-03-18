@@ -117,10 +117,13 @@ return packer.startup(function(use)
     }
 
     use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
-        config = function() require'romamihalich.nvim-treesitter' end,
-        requires = { 'windwp/nvim-ts-autotag' }
+        'https://github.com/nvim-treesitter/playground',
+        {
+            'nvim-treesitter/nvim-treesitter',
+            run = ':TSUpdate',
+            config = function() require'romamihalich.nvim-treesitter' end,
+            requires = { 'windwp/nvim-ts-autotag' }
+        }
     }
 
     -- Status line
