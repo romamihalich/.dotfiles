@@ -1,3 +1,7 @@
+if vim.loop.os_uname().sysname ~= "Linux" then
+    return
+end
+
 local dap = require'dap'
 
 vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})

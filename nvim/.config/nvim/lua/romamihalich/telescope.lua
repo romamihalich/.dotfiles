@@ -87,6 +87,9 @@ keymap("n", "<leader>fo", function()
     })
 end, "File browser")
 
-telescope.load_extension('fzf')
+local ok, _ = pcall(telescope.load_extension, 'fzf')
+if not ok then
+    print('WARN: fzf extension not loaded')
+end
 telescope.load_extension('file_browser')
 telescope.load_extension("ui-select")
