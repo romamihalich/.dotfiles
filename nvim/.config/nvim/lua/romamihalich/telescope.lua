@@ -79,13 +79,14 @@ keymap("n", "<leader>fr", builtin.oldfiles, "Recent files")
 keymap("n", "<leader>fg", builtin.git_files, "Git files")
 keymap("n", "<leader>fl", builtin.live_grep, "Live grep")
 keymap("n", "<leader>fd", builtin.diagnostics, "Diagnostics")
-keymap("n", "<leader>fs", builtin.lsp_workspace_symbols, "Symbols")
+keymap("n", "<leader>fs", builtin.lsp_dynamic_workspace_symbols, "Symbols")
 keymap("n", "<leader>fo", function()
     telescope.extensions.file_browser.file_browser({
         cwd_to_path=true,
         grouped=true,
     })
 end, "File browser")
+keymap("n", "<leader>fb", builtin.buffers, "Buffers")
 
 local ok, _ = pcall(telescope.load_extension, 'fzf')
 if not ok then
