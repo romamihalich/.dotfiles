@@ -366,3 +366,5 @@ config.unbind('.')
 ru_keys = 'йцукенгшщзхъфывапролджэячсмитьбю.'+'ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,'
 en_keys = "qwertyuiop[]asdfghjkl;'zxcvbnm,./"+'QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?'
 c.bindings.key_mappings.update(dict(zip(ru_keys, en_keys)))
+c.colors.webpage.preferred_color_scheme = 'dark'
+# c.colors.webpage.darkmode.enabled = True
