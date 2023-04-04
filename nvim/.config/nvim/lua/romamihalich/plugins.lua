@@ -123,7 +123,8 @@ return packer.startup(function(use)
             run = ':TSUpdate',
             config = function() require'romamihalich.nvim-treesitter' end,
             requires = { 'windwp/nvim-ts-autotag' }
-        }
+        },
+        'nvim-treesitter/nvim-treesitter-context',
     }
 
     -- Status line
