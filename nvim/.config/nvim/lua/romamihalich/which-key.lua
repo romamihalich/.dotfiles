@@ -62,7 +62,8 @@ which_key.setup {
 }
 
 which_key.register({
-    ["<leader>l"] = { name = "+LSP" }
+    ["<leader>l"] = { name = "+LSP" },
+    ["<leader>f"] = { name = "+find" },
 }, { mode = "v" })
 
 which_key.register({

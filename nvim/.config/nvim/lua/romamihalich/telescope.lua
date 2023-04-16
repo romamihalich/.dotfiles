@@ -75,11 +75,11 @@ telescope.setup{
 local builtin = require('telescope.builtin')
 local keymap = require('romamihalich.keymaps').keymap
 keymap("n", "<leader>ff", builtin.find_files, "Files")
-keymap("n", "<leader>fr", builtin.oldfiles, "Recent files")
+-- keymap("n", "<leader>fr", builtin.oldfiles, "Recent files")
 keymap("n", "<leader>fg", builtin.git_files, "Git files")
 keymap("n", "<leader>fl", builtin.live_grep, "Live grep")
 keymap("n", "<leader>fd", builtin.diagnostics, "Diagnostics")
-keymap("n", "<leader>fs", builtin.lsp_dynamic_workspace_symbols, "Symbols")
+-- keymap("n", "<leader>fs", builtin.lsp_dynamic_workspace_symbols, "Symbols")
 keymap("n", "<leader>fo", function()
     telescope.extensions.file_browser.file_browser({
         cwd_to_path=true,
@@ -87,6 +87,9 @@ keymap("n", "<leader>fo", function()
     })
 end, "File browser")
 keymap("n", "<leader>fb", builtin.buffers, "Buffers")
+keymap("n", "<leader>fr", builtin.resume, "Resume")
+keymap("n", "<leader>fs", builtin.grep_string, "Grep string")
+keymap("v", "<leader>fs", builtin.grep_string, "Grep string")
 
 local ok, _ = pcall(telescope.load_extension, 'fzf')
 if not ok then
