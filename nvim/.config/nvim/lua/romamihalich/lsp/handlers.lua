@@ -56,15 +56,17 @@ M.get_on_attach = function(server_name)
     return function(client, bufnr)
         local keymap = require'romamihalich.keymaps'.keymap
         keymap("n",  "<leader>la",  vim.lsp.buf.code_action,        "Actions")
-        keymap("n",  "<leader>lf",  vim.lsp.buf.formatting,         "Formatting")
+        -- keymap("n",  "<leader>lf",  vim.lsp.buf.formatting,         "Formatting")
         keymap("n",  "<leader>lr",  vim.lsp.buf.rename,             "Rename")
         keymap("n",  "<leader>ll",  vim.diagnostic.open_float,      "Line diagnostics")
         keymap("n",  "<leader>lj",  vim.diagnostic.goto_next,       "Next diagnostic")
         keymap("n",  "<leader>lk",  vim.diagnostic.goto_prev,       "Prev diagnostic")
-        keymap("v",  "<leader>la",  vim.lsp.buf.range_code_action,  "Code actions")
+        -- keymap("v",  "<leader>la",  vim.lsp.buf.range_code_action,  "Code actions")
         keymap("n",  "gs",          vim.lsp.buf.signature_help,     "Signature help")
         keymap("n", "gd", function() require("telescope.builtin").lsp_definitions() end, "Go to definition")
         keymap("n", "gr", function() require("telescope.builtin").lsp_references() end, "Go to references")
+
+        client.server_capabilities.semanticTokensProvider = nil
 
         local custom_hook = on_attaches[server_name]
         if custom_hook then
