@@ -154,8 +154,6 @@ return packer.startup(function(use)
 
     use { "folke/trouble.nvim", config = function() require("trouble").setup { } end }
 
-    use { "folke/todo-comments.nvim", config = function() require("todo-comments").setup { } end }
-
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
