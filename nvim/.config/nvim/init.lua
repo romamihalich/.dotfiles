@@ -1,3 +1,4 @@
+vim.loader.enable()
 pcall(require, "impatient")
 require "romamihalich.options"
 require "romamihalich.keymaps"

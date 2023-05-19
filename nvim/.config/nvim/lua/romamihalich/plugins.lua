@@ -63,7 +63,8 @@ return packer.startup(function(use)
         'gruvbox-community/gruvbox',
         'LunarVim/onedarker.nvim',
         'navarasu/onedark.nvim',
-        'EdenEast/nightfox.nvim'
+        'EdenEast/nightfox.nvim',
+        'rose-pine/neovim',
     }
 
     -- DAP
