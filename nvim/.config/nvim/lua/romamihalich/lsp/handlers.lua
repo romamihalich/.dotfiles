@@ -46,6 +46,7 @@ end
 local on_attaches = {
     omnisharp = function(client, bufnr)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', "<cmd>lua require('omnisharp_extended').telescope_lsp_definitions()<CR>", { noremap=true, silent=true })
+        client.server_capabilities.semanticTokensProvider = nil
     end,
     tsserver = function(client, bufnr)
         client.server_capabilities.document_formatting = false
@@ -65,8 +66,6 @@ M.get_on_attach = function(server_name)
         keymap("n",  "gs",          vim.lsp.buf.signature_help,     "Signature help")
         keymap("n", "gd", function() require("telescope.builtin").lsp_definitions() end, "Go to definition")
         keymap("n", "gr", function() require("telescope.builtin").lsp_references() end, "Go to references")
-
-        client.server_capabilities.semanticTokensProvider = nil
 
         local custom_hook = on_attaches[server_name]
         if custom_hook then

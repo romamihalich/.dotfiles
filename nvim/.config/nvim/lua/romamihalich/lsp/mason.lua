@@ -14,6 +14,10 @@ require("mason-lspconfig").setup_handlers {
             opts = vim.tbl_deep_extend("force", settings, opts)
         end
 
+        if server_name == "rust_analyzer" and require('romamihalich.lsp.rust-tools').setup(opts) then
+            return
+        end
+
         require("lspconfig")[server_name].setup(opts)
     end,
 }
