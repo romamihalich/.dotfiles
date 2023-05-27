@@ -4,18 +4,42 @@ require("mason-lspconfig").setup {
 }
 require("mason-lspconfig").setup_handlers {
     function (server_name)
+        local default_on_attach = require("romamihalich.lsp.handlers").on_attach
+
         local opts = {
-            on_attach = require("romamihalich.lsp.handlers").get_on_attach(server_name),
+            on_attach = default_on_attach,
             capabilities = require("romamihalich.lsp.handlers").capabilities,
         }
 
-        local settings_ok, settings = pcall(require, "romamihalich.lsp.server-settings." .. server_name)
-        if settings_ok then
-            opts = vim.tbl_deep_extend("force", settings, opts)
-        end
-
         if server_name == "rust_analyzer" and require('romamihalich.lsp.rust-tools').setup(opts) then
             return
+        end
+
+        if server_name == "lua_ls" then
+            opts = vim.tbl_deep_extend("force", {
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { "vim" }
+                        }
+                    }
+                }
+            }, opts)
+        end
+
+        if server_name == "omnisharp" then
+            opts.on_attach = function(client, bufnr)
+                default_on_attach(client, bufnr)
+                vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', "<cmd>lua require('omnisharp_extended').telescope_lsp_definitions()<CR>", { noremap=true, silent=true })
+                client.server_capabilities.semanticTokensProvider = nil
+            end
+        end
+
+        if server_name == "tsserver" then
+            opts.on_attach = function(client, bufnr)
+                default_on_attach(client, bufnr)
+                client.server_capabilities.document_formatting = false
+            end
         end
 
         require("lspconfig")[server_name].setup(opts)
