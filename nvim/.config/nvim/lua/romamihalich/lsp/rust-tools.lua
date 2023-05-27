@@ -15,6 +15,11 @@ function M.setup(opts)
     local liblldb_path  = extension_path .. 'lldb/lib/liblldb.so'
 
     rt.setup({
+        tools = {
+            inlay_hints = {
+                auto = false,
+            },
+        },
         server = {
             on_attach = function (client, bufnr)
                 opts.on_attach(client, bufnr)
