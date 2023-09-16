@@ -118,6 +118,7 @@ alias v=vifm
 alias o='xdg-open'
 alias lg='lazygit'
 alias ts='tmux-sessionizer'
+alias btw='neofetch'
 
 # syntax highlight when tab compleating
 eval "$(dircolors)"
