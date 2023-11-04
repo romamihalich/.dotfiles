@@ -10,7 +10,7 @@ require'nvim-treesitter.configs'.setup {
     disable = { "" }, -- list of language that will be disabled
     additional_vim_regex_highlighting = false, -- no bold return, def, etc...
   },
-  indent = { enable = true, disable = { "yaml", "python" } },
+  indent = { enable = false, disable = { "yaml", "python" } },
   incremental_selection = {
     enable = true,
     keymaps = {
