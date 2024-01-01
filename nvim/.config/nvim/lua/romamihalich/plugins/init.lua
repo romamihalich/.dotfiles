@@ -16,18 +16,5 @@ return {
         ]]
     end},
 
-    -- Color schemes
-    {
-        'gruvbox-community/gruvbox',
-        'LunarVim/onedarker.nvim',
-        'navarasu/onedark.nvim',
-        'EdenEast/nightfox.nvim',
-        'rose-pine/neovim',
-    },
-
-    'ThePrimeagen/harpoon',
-
-    'godlygeek/tabular',
-
     { "folke/trouble.nvim", config = function() require("trouble").setup { } end },
 }

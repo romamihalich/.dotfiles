@@ -99,6 +99,9 @@ return {
         keymap("n", "<leader>fs", builtin.grep_string, "Grep string")
         keymap("v", "<leader>fs", builtin.grep_string, "Grep string")
 
+
+        keymap("n", "<leader>gb", function() vim.cmd.Telescope("git_branches") end, "Git branches")
+
         local ok, _ = pcall(telescope.load_extension, 'fzf')
         if not ok then
             print('WARN: fzf extension not loaded')

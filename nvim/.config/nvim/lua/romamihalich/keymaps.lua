@@ -53,12 +53,6 @@ local run_shell_command = function()
     end)
 end
 
-vim.keymap.set("v", "<leader>=", ":Tabularize /", {
-    noremap = true,
-    silent = false,
-    desc = "Tabularize (\\zs)"
-})
-
 keymap("n", "<leader>q", "<cmd>bd!<CR>", "Close current buffer")
 keymap("n", "<leader>r", run_shell_command, "Run a shell command")
 keymap("n", "<leader>H", "<cmd>cd %:p:h | pwd<CR>", "Cd here")
@@ -66,22 +60,8 @@ keymap("n", "<leader>H", "<cmd>cd %:p:h | pwd<CR>", "Cd here")
 keymap("n", "<leader>ot", "<cmd>!$TERMINAL --working-directory \"$PWD\"&<CR><CR>", "Terminal")
 keymap("n", "<leader>oc", "<cmd>term cht.sh<CR>", "Cheet sheet")
 
-keymap("n", "<leader>ha", "<cmd> lua require'harpoon.mark'.add_file()<CR>", "Add file")
-keymap("n", "<leader>ht", "<cmd> lua require'harpoon.ui'.toggle_quick_menu()<CR>", "Toggle menu")
-keymap("n", "<leader>hh", "<cmd> lua require'harpoon.ui'.nav_file(1)<CR>", "Nav file 1")
-keymap("n", "<leader>hj", "<cmd> lua require'harpoon.ui'.nav_file(2)<CR>", "Nav file 2")
-keymap("n", "<leader>hk", "<cmd> lua require'harpoon.ui'.nav_file(3)<CR>", "Nav file 3")
-
 keymap("n", "<C-n>", vim.cmd.cnext);
 keymap("n", "<C-p>", vim.cmd.cprev);
-
--- Git related
-keymap("n", "<leader>gg", vim.cmd.DiffviewOpen, "Diffview")
-keymap("n", "<leader>gs", function() vim.cmd.Gitsigns("stage_hunk") end, "Stage hunk")
-keymap("n", "<leader>gl", function() vim.cmd.Gitsigns("blame_line") end, "Blame line")
-keymap("n", "<leader>gb", function() vim.cmd.Telescope("git_branches") end, "Git branches")
-keymap("n", "]h", function() vim.cmd.Gitsigns("next_hunk") end, "Next hunk")
-keymap("n", "[h", function() vim.cmd.Gitsigns("prev_hunk") end, "Prev hunk")
 
 M.keymap = keymap
 return M
