@@ -12,7 +12,7 @@ local debuggers = {
     'netcoredbg', 'python'
 }
 for _, debugger in ipairs(debuggers) do
-    local dbg = require('romamihalich.dap.debuggers.'..debugger).get_conf(debuggers_path)
+    local dbg = require('romamihalich.plugins.dap.debuggers.'..debugger).get_conf(debuggers_path)
     dap.adapters[dbg.adapters.key] = dbg.adapters.value
     dap.configurations[dbg.configurations.key] = dbg.configurations.value
 end

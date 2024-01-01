@@ -34,6 +34,9 @@ keymap("v", "<", "<gv")
 keymap("v", "p", "\"_dP")
 -- keymap("v", "*", 'y/"<CR>')
 
+keymap("n", "<X1Mouse>", "<C-O>")
+keymap("n", "<X2Mouse>", "<C-I>")
+
 keymap("t", "<Esc>", "<C-\\><C-n>")
 keymap("t", "<C-h>", "<C-\\><C-n><c-w>h")
 -- keymap("t", "<C-l>", "<C-\\><C-n><c-w>l")

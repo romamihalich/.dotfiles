@@ -4,14 +4,14 @@ require("mason-lspconfig").setup {
 }
 require("mason-lspconfig").setup_handlers {
     function (server_name)
-        local default_on_attach = require("romamihalich.lsp.handlers").on_attach
+        local default_on_attach = require("romamihalich.plugins.lsp.handlers").on_attach
 
         local opts = {
             on_attach = default_on_attach,
-            capabilities = require("romamihalich.lsp.handlers").capabilities,
+            capabilities = require("romamihalich.plugins.lsp.handlers").capabilities,
         }
 
-        if server_name == "rust_analyzer" and require('romamihalich.lsp.rust-tools').setup(opts) then
+        if server_name == "rust_analyzer" and require('romamihalich.plugins.lsp.rust-tools').setup(opts) then
             return
         end
 
