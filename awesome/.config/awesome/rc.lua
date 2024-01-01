@@ -93,6 +93,7 @@ shutdownmenu = {
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "open " .. file_manager, file_manager },
+                                    { "open browser", browser },
                                     { "open terminal", terminal },
                                     { "shutdown...", shutdownmenu, nil }
                                   }
