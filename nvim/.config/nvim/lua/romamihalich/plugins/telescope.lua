@@ -81,26 +81,25 @@ return {
 
         -- keymaps
         local builtin = require('telescope.builtin')
-        local keymap = require('romamihalich.keymaps').keymap
-        keymap("n", "<leader>ff", builtin.find_files, "Files")
+        Keymap("n", "<leader>ff", builtin.find_files, "Files")
         -- keymap("n", "<leader>fr", builtin.oldfiles, "Recent files")
-        keymap("n", "<leader>fg", builtin.git_files, "Git files")
-        keymap("n", "<leader>fl", builtin.live_grep, "Live grep")
-        keymap("n", "<leader>fd", builtin.diagnostics, "Diagnostics")
+        Keymap("n", "<leader>fg", builtin.git_files, "Git files")
+        Keymap("n", "<leader>fl", builtin.live_grep, "Live grep")
+        Keymap("n", "<leader>fd", builtin.diagnostics, "Diagnostics")
         -- keymap("n", "<leader>fs", builtin.lsp_dynamic_workspace_symbols, "Symbols")
-        keymap("n", "<leader>fo", function()
+        Keymap("n", "<leader>fo", function()
             telescope.extensions.file_browser.file_browser({
                 cwd_to_path=true,
                 grouped=true,
             })
         end, "File browser")
-        keymap("n", "<leader>fb", builtin.buffers, "Buffers")
-        keymap("n", "<leader>fr", builtin.resume, "Resume")
-        keymap("n", "<leader>fs", builtin.grep_string, "Grep string")
-        keymap("v", "<leader>fs", builtin.grep_string, "Grep string")
+        Keymap("n", "<leader>fb", builtin.buffers, "Buffers")
+        Keymap("n", "<leader>fr", builtin.resume, "Resume")
+        Keymap("n", "<leader>fs", builtin.grep_string, "Grep string")
+        Keymap("v", "<leader>fs", builtin.grep_string, "Grep string")
 
 
-        keymap("n", "<leader>gb", function() vim.cmd.Telescope("git_branches") end, "Git branches")
+        Keymap("n", "<leader>gb", function() vim.cmd.Telescope("git_branches") end, "Git branches")
 
         local ok, _ = pcall(telescope.load_extension, 'fzf')
         if not ok then

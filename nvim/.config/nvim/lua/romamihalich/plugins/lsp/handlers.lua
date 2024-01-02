@@ -43,17 +43,16 @@ M.setup = function()
 end
 
 M.on_attach = function(client, bufnr)
-    local keymap = require'romamihalich.keymaps'.keymap
-    keymap("n",  "<leader>la",  vim.lsp.buf.code_action,        "Actions")
+    Keymap("n",  "<leader>la",  vim.lsp.buf.code_action,        "Actions")
     -- keymap("n",  "<leader>lf",  vim.lsp.buf.formatting,         "Formatting")
-    keymap("n",  "<leader>lr",  vim.lsp.buf.rename,             "Rename")
-    keymap("n",  "<leader>ll",  vim.diagnostic.open_float,      "Line diagnostics")
-    keymap("n",  "<leader>lj",  vim.diagnostic.goto_next,       "Next diagnostic")
-    keymap("n",  "<leader>lk",  vim.diagnostic.goto_prev,       "Prev diagnostic")
+    Keymap("n",  "<leader>lr",  vim.lsp.buf.rename,             "Rename")
+    Keymap("n",  "<leader>ll",  vim.diagnostic.open_float,      "Line diagnostics")
+    Keymap("n",  "<leader>lj",  vim.diagnostic.goto_next,       "Next diagnostic")
+    Keymap("n",  "<leader>lk",  vim.diagnostic.goto_prev,       "Prev diagnostic")
     -- keymap("v",  "<leader>la",  vim.lsp.buf.range_code_action,  "Code actions")
-    keymap("n",  "gs",          vim.lsp.buf.signature_help,     "Signature help")
-    keymap("n", "gd", function() require("telescope.builtin").lsp_definitions() end, "Go to definition")
-    keymap("n", "gr", function() require("telescope.builtin").lsp_references() end, "Go to references")
+    Keymap("n",  "gs",          vim.lsp.buf.signature_help,     "Signature help")
+    Keymap("n", "gd", function() require("telescope.builtin").lsp_definitions() end, "Go to definition")
+    Keymap("n", "gr", function() require("telescope.builtin").lsp_references() end, "Go to references")
 end
 
 local cmp_nvim_lsp = require("cmp_nvim_lsp")

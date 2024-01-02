@@ -1,4 +1,5 @@
 vim.loader.enable()
+require "romamihalich.globals"
 require "romamihalich.options"
 require "romamihalich.keymaps"
 require "romamihalich.lazy"

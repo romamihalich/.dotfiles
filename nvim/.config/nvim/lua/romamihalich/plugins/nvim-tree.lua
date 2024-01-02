@@ -57,5 +57,5 @@ return {
             },
         }
 
-        require'romamihalich.keymaps'.keymap("n", "<leader>e", vim.cmd.NvimTreeToggle, "Explorer toggle")
+        Keymap("n", "<leader>e", vim.cmd.NvimTreeToggle, "Explorer toggle")
     end}
