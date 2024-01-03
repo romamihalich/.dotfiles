@@ -1,5 +1,20 @@
 return {
     'hoob3rt/lualine.nvim',
+    dependencies = {
+        {
+            'SmiteshP/nvim-navic',
+            dependencies = { "neovim/nvim-lspconfig" },
+            config = function()
+                require "nvim-navic".setup {
+                    lsp = {
+                        auto_attach = true,
+                    },
+                    highlight = true,
+                    click = true,
+                }
+            end
+        }
+    },
     config = function()
         local lualine = require'lualine'
 
@@ -36,7 +51,10 @@ return {
             sections = {
                 lualine_a = {'mode'},
                 lualine_b = {'branch'},
-                lualine_c = {'filename'},
+                lualine_c = {
+                    'filename',
+                    { "navic", color_correction = "static", }
+                },
                 lualine_x = {
                     {
                         'diagnostics',
@@ -58,7 +76,8 @@ return {
                             mac = '',  -- e711
                         }
                     },
-                    'filetype'
+                    'filetype',
+                    'location',
                 },
                 lualine_y = {'progress'},
                 lualine_z = {}
