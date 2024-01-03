@@ -60,7 +60,11 @@ return {
                         'diagnostics',
                         sources = { 'nvim_diagnostic' },
                         sections = { "error", "warn", "hint" },
-                        symbols = { error = " ", warn = " ", hint = " " },
+                        symbols = {
+                            error = Signs.error .. " ",
+                            warn = Signs.warn .. " ",
+                            hint = Signs.hint .. " ",
+                        },
                         colored = true,
                         update_in_insert = false,
                         always_visible = false,

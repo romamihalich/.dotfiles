@@ -6,3 +6,11 @@ Keymap = function(mode, lhs, rhs, desc)
         desc    = desc,
     })
 end
+
+-- signs used to display
+Signs = {
+    error = "",
+    warn = "",
+    hint = "",
+    info = "",
+}

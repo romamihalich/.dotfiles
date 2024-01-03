@@ -14,10 +14,10 @@ return {
             diagnostics = {
                 enable = false,
                 icons = {
-                    hint = "",
-                    info = "",
-                    warning = "",
-                    error = "",
+                    error = Signs.error,
+                    warning = Signs.warn,
+                    hint = Signs.hint,
+                    info = Signs.info,
                 }
             },
             update_focused_file = {
