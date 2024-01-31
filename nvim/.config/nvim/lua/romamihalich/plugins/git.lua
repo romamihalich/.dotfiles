@@ -1,5 +1,10 @@
 return {
-    'tpope/vim-fugitive',
+    {
+        'tpope/vim-fugitive',
+        config = function()
+            Keymap("n", "<leader>gq", function() vim.cmd.G("difftool") end, "Set quickfix list with hunks")
+        end
+    },
     {
         'sindrets/diffview.nvim',
         config = function()
