@@ -15,6 +15,4 @@ return {
             let g:XkbSwitchNLayout = 'us'
         ]]
     end},
-
-    { "folke/trouble.nvim", config = function() require("trouble").setup { } end },
 }

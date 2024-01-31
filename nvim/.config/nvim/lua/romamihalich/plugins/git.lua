@@ -17,9 +17,15 @@ return {
     {
         'lewis6991/gitsigns.nvim',
         config = function()
-            require('gitsigns').setup()
+            require('gitsigns').setup({
+                numhl = true,
+            })
             Keymap("n", "<leader>gs", function() vim.cmd.Gitsigns("stage_hunk") end, "Stage hunk")
             Keymap("n", "<leader>gl", function() vim.cmd.Gitsigns("blame_line") end, "Blame line")
+            Keymap("n", "<leader>gp", function() vim.cmd.Gitsigns("preview_hunk") end, "Preview hunk")
+            Keymap("n", "<leader>gr", function() vim.cmd.Gitsigns("reset_hunk") end, "Reset hunk")
+
+            -- doesn't work for some reason
             Keymap("n", "]h", function() vim.cmd.Gitsigns("next_hunk") end, "Next hunk")
             Keymap("n", "[h", function() vim.cmd.Gitsigns("prev_hunk") end, "Prev hunk")
         end

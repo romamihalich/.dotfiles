@@ -3,6 +3,7 @@ return {
     'LunarVim/onedarker.nvim',
     'EdenEast/nightfox.nvim',
     'rose-pine/neovim',
+    'folke/tokyonight.nvim',
     {
         'navarasu/onedark.nvim',
         config = function()

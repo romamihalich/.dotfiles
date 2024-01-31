@@ -31,12 +31,11 @@ require("mason-lspconfig").setup_handlers {
             opts.on_attach = function(client, bufnr)
                 default_on_attach(client, bufnr)
                 vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', "<cmd>lua require('omnisharp_extended').telescope_lsp_definitions()<CR>", { noremap=true, silent=true })
-                client.server_capabilities.semanticTokensProvider = nil
             end
         end
 
-        if server_name == "tsserver" then
-            opts.on_attach = function(client, bufnr)
+        if server_name == "tsserver"   then
+            opts .on_attach = function(client, bufnr)
                 default_on_attach(client, bufnr)
                 client.server_capabilities.document_formatting = false
             end
