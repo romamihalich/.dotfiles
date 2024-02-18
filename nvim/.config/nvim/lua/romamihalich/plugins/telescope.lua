@@ -82,8 +82,16 @@ return {
         -- keymaps
         local builtin = require('telescope.builtin')
         Keymap("n", "<leader>ff", builtin.find_files, "Files")
-        -- keymap("n", "<leader>fr", builtin.oldfiles, "Recent files")
-        Keymap("n", "<leader>fg", builtin.git_files, "Git files")
+        Keymap("n", "<leader>fF", function() builtin.find_files({search_file=vim.fn.expand("<cword>")}) end, "Files (Word under cursor)")
+        Keymap("v", "<leader>ff", function()
+            local saved_reg = vim.fn.getreg "v"
+            vim.cmd [[noautocmd sil norm "vy]]
+            local word = vim.fn.getreg "v"
+            vim.fn.setreg("v", saved_reg)
+            builtin.find_files({search_file=word})
+        end, "Files")
+
+        Keymap("n", "<leader>fg", function() builtin.git_files({show_untracked = true }) end, "Git files")
         Keymap("n", "<leader>fl", builtin.live_grep, "Live grep")
         Keymap("n", "<leader>fd", builtin.diagnostics, "Diagnostics")
         -- keymap("n", "<leader>fs", builtin.lsp_dynamic_workspace_symbols, "Symbols")
@@ -96,7 +104,10 @@ return {
         Keymap("n", "<leader>fb", builtin.buffers, "Buffers")
         Keymap("n", "<leader>fr", builtin.resume, "Resume")
         Keymap("n", "<leader>fs", builtin.grep_string, "Grep string")
+        Keymap("n", "<leader>fS", function() builtin.grep_string({word_match="-w"}) end, "Grep string (Word match)")
         Keymap("v", "<leader>fs", builtin.grep_string, "Grep string")
+        Keymap("n", "<leader>fq", builtin.quickfix, "Quickfix")
+        Keymap("n", "<leader>fh", builtin.help_tags, "Help")
 
 
         Keymap("n", "<leader>gb", function() vim.cmd.Telescope("git_branches") end, "Git branches")

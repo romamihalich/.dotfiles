@@ -17,6 +17,7 @@ return {
                 },
             })
             Keymap("n", "<leader>gg", vim.cmd.DiffviewOpen, "Diffview")
+            Keymap("v", "<leader>gh", vim.cmd.DiffviewFileHistory, "File history")
         end
     },
     {
@@ -30,7 +31,6 @@ return {
             Keymap("n", "<leader>gp", function() vim.cmd.Gitsigns("preview_hunk") end, "Preview hunk")
             Keymap("n", "<leader>gr", function() vim.cmd.Gitsigns("reset_hunk") end, "Reset hunk")
 
-            -- doesn't work for some reason
             Keymap("n", "]h", function() vim.cmd.Gitsigns("next_hunk") end, "Next hunk")
             Keymap("n", "[h", function() vim.cmd.Gitsigns("prev_hunk") end, "Prev hunk")
         end
