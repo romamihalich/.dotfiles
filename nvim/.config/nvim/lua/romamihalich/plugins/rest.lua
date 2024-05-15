@@ -1,6 +1,18 @@
 return {
-    'NTBBloodbath/rest.nvim', config = function()
-        require'rest-nvim'.setup({
+    {
+      "vhyrro/luarocks.nvim",
+      priority = 1000,
+      config = true,
+      opts = {
+        rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" }
+      }
+    },
+    {
+      "rest-nvim/rest.nvim",
+      ft = "http",
+      dependencies = { "luarocks.nvim" },
+      config = function()
+        require("rest-nvim").setup({
             -- Open request results in a horizontal split
             result_split_horizontal = false,
             -- Skip SSL verification, useful for unknown certificates
@@ -22,5 +34,6 @@ return {
             custom_dynamic_variables = {},
             yank_dry_run = true,
         })
-    end
+      end,
+    }
 }
