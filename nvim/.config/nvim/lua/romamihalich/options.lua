@@ -26,6 +26,8 @@ local options = {
     langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz",
     wildignore = "node_modules/*,bin/*,obj/*,.git/*",
     cursorline = true,
+    grepprg = "rg --vimgrep --no-heading",
+    grepformat = "%f:%l:%c:%m,%f:%l:%m,%f",
 }
 
 for k, v in pairs(options) do
