@@ -35,5 +35,5 @@ for k, v in pairs(options) do
 end
 
 vim.opt.iskeyword:append('-')
-vim.opt.diffopt:append('iwhiteall')
+vim.opt.diffopt:append('iwhite')
 vim.opt.fillchars:append('diff: ')

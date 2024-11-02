@@ -82,6 +82,7 @@ return {
         -- keymaps
         local builtin = require('telescope.builtin')
         Keymap("n", "<leader>ff", builtin.find_files, "Files")
+        Keymap("n", "<leader>аа", builtin.find_files, "Files")
         Keymap("n", "<leader>fF", function() builtin.find_files({search_file=vim.fn.expand("<cword>")}) end, "Files (Word under cursor)")
         Keymap("v", "<leader>ff", function()
             local saved_reg = vim.fn.getreg "v"
@@ -93,6 +94,7 @@ return {
 
         Keymap("n", "<leader>fg", function() builtin.git_files({show_untracked = true }) end, "Git files")
         Keymap("n", "<leader>fl", builtin.live_grep, "Live grep")
+        Keymap("n", "<leader>ад", builtin.live_grep, "Live grep")
         Keymap("n", "<leader>fd", builtin.diagnostics, "Diagnostics")
         -- keymap("n", "<leader>fs", builtin.lsp_dynamic_workspace_symbols, "Symbols")
         Keymap("n", "<leader>fo", function()

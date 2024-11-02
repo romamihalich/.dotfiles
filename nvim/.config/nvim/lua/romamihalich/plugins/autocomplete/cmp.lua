@@ -73,7 +73,7 @@ cmp.setup.cmdline(':', {
       name = 'cmdline',
       keyword_length = 3,
       option = {
-        ignore_cmds = { 'Man', '!', 'vimgrep' }
+        ignore_cmds = { 'Man', '!', 'vimgrep', 'grep' }
       }
     }
   })
