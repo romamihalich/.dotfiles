@@ -7,12 +7,4 @@ return {
     'nvim-lua/plenary.nvim',
 
     'vimwiki/vimwiki',
-
-    {'lyokha/vim-xkbswitch', init = function()
-        vim.cmd [[
-            let g:XkbSwitchEnabled = 1
-            let g:XkbSwitchLib = '/home/romamihalich/software/xkb-switch/build/libxkbswitch.so'
-            let g:XkbSwitchNLayout = 'us'
-        ]]
-    end},
 }
