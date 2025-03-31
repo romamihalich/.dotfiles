@@ -19,14 +19,11 @@ autocmd("BufWritePost", {
     command = "!pkill -USR1 -x sxhkd"
 })
 
-vim.cmd [[
-    augroup yank_highlight
-      autocmd!
-        if exists('##TextYankPost')
-          autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
-        endif
-    augroup END
-]]
+autocmd('TextYankPost', {
+    callback = function()
+        vim.highlight.on_yank()
+    end
+})
 
 autocmd("FileType", {
     pattern = "*",
