@@ -52,3 +52,10 @@ Keymap("n", "<leader>oc", "<cmd>term cht.sh<CR>", "Cheet sheet")
 
 Keymap("n", "<C-n>", vim.cmd.cnext);
 Keymap("n", "<C-p>", vim.cmd.cprev);
+
+Keymap("n", "<leader>cl", function()
+    local filePath = vim.fn.expand("%")
+    local lineNbr = vim.fn.line(".")
+    local location = filePath .. ":" .. lineNbr
+    vim.fn.setreg("+", location)
+end, "Copy location")
