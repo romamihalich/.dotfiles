@@ -11,7 +11,7 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
-Keymap("n", "K", vim.lsp.buf.hover)
+Keymap("n", "K", function() vim.lsp.buf.hover({border='rounded'}) end)
 
 Keymap("n", "Y", "y$")
 Keymap("n", "<C-h>", "<c-w>h")

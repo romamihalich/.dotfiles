@@ -4,8 +4,6 @@ end
 
 local dap = require'dap'
 
-vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
-
 local debuggers_path = os.getenv('HOME') .. '/.local/share/nvim/mason/bin/'
 
 local debuggers = {

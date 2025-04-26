@@ -1,23 +1,25 @@
 local M = {}
 
 M.setup = function()
-    local signs = {
-        { name = "DiagnosticSignError", text = Signs.error },
-        { name = "DiagnosticSignWarn", text = Signs.warn },
-        { name = "DiagnosticSignHint", text = Signs.hint },
-        { name = "DiagnosticSignInfo", text = Signs.info },
-    }
-
-    for _, sign in ipairs(signs) do
-        vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-    end
+    vim.diagnostic.config({
+        signs = {
+            text = {
+                [vim.diagnostic.severity.ERROR] = Signs.error,
+                [vim.diagnostic.severity.WARN] = Signs.warn,
+                [vim.diagnostic.severity.INFO] = Signs.info,
+                [vim.diagnostic.severity.HINT] = Signs.hint,
+            },
+            numhl = {
+                [vim.diagnostic.severity.ERROR] = "",
+                [vim.diagnostic.severity.WARN] = "",
+                [vim.diagnostic.severity.HINT] = "",
+                [vim.diagnostic.severity.INFO] = "",
+            },
+        },
+    })
 
     local config = {
         virtual_text = true,
-        -- show signs
-        signs = {
-            active = signs,
-        },
         update_in_insert = false,
         underline = true,
         severity_sort = true,
@@ -32,27 +34,19 @@ M.setup = function()
     }
 
     vim.diagnostic.config(config)
-
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = 'rounded',
-    })
-
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = 'rounded',
-    })
 end
 
 M.on_attach = function(client, bufnr)
-    Keymap("n",  "<leader>la",  vim.lsp.buf.code_action,        "Actions")
-    -- keymap("n",  "<leader>lf",  vim.lsp.buf.formatting,         "Formatting")
-    Keymap("n",  "<leader>lr",  vim.lsp.buf.rename,             "Rename")
-    Keymap("n",  "<leader>ll",  vim.diagnostic.open_float,      "Line diagnostics")
-    Keymap("n",  "<leader>lj",  vim.diagnostic.goto_next,       "Next diagnostic")
-    Keymap("n",  "<leader>lk",  vim.diagnostic.goto_prev,       "Prev diagnostic")
-    -- keymap("v",  "<leader>la",  vim.lsp.buf.range_code_action,  "Code actions")
-    Keymap("n",  "gs",          vim.lsp.buf.signature_help,     "Signature help")
-    Keymap("n", "gd", function() require("telescope.builtin").lsp_definitions() end, "Go to definition")
-    Keymap("n", "gr", function() require("telescope.builtin").lsp_references() end, "Go to references")
+    Keymap("n",  "<leader>la",  vim.lsp.buf.code_action,                                        "Actions")
+    Keymap("n",  "<leader>lf",  vim.lsp.buf.format,                                             "Formatting")
+    Keymap("n",  "<leader>lr",  vim.lsp.buf.rename,                                             "Rename")
+    Keymap("n",  "<leader>ll",  vim.diagnostic.open_float,                                      "Line diagnostics")
+    Keymap("n",  "<leader>lj",  function() vim.diagnostic.jump({count=1, float=true}) end,      "Next diagnostic")
+    Keymap("n",  "<leader>lk",  function() vim.diagnostic.jump({count=-1, float=true}) end,     "Prev diagnostic")
+    Keymap("v",  "<leader>la",  vim.lsp.buf.code_action,                                        "Code actions")
+    Keymap("n",  "gs",          function() vim.lsp.buf.signature_help({border='rounded'}) end,  "Signature help")
+    Keymap("n",  "gd",          function() require("telescope.builtin").lsp_definitions() end,  "Go to definition")
+    Keymap("n",  "gr",          function() require("telescope.builtin").lsp_references() end,   "Go to references")
 end
 
 local cmp_nvim_lsp = require("cmp_nvim_lsp")

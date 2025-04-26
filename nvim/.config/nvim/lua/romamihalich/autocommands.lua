@@ -21,7 +21,7 @@ autocmd("BufWritePost", {
 
 autocmd('TextYankPost', {
     callback = function()
-        vim.highlight.on_yank()
+        vim.hl.on_yank()
     end
 })
 
