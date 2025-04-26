@@ -1,49 +1,20 @@
 return {
-    'folke/which-key.nvim',
-    commit = '4433e5ec9a507e5097571ed55c02ea9658fb268a',
+    "folke/which-key.nvim",
+    event = "VeryLazy",
     config = function()
-        local which_key = require'which-key'
-
-        which_key.setup {
-            plugins = {
-                marks = true, -- shows a list of your marks on ' and `
-                registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
-                spelling = {
-                    enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
-                    suggestions = 20, -- how many suggestions should be shown in the list?
+        local wk = require "which-key"
+        wk.setup {
+            win = {
+                no_overlap = false,
+                border = "single",
+                padding = { 2, 2 }, -- extra window padding [top/bottom, right/left]
+                title = true,
+                title_pos = "center",
+                -- Additional vim.wo and vim.bo options
+                bo = {},
+                wo = {
+                    -- winblend = 10, -- value between 0-100 0 for fully opaque and 100 for fully transparent
                 },
-                -- the presets plugin, adds help for a bunch of default keybindings in Neovim
-                -- No actual key bindings are created
-                presets = {
-                    operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
-                    motions = true, -- adds help for motions
-                    text_objects = true, -- help for text objects triggered after entering an operator
-                    windows = true, -- default bindings on <c-w>
-                    nav = true, -- misc bindings to work with windows
-                    z = true, -- bindings for folds, spelling and others prefixed with z
-                    g = true, -- bindings for prefixed with g
-                },
-            },
-            -- add operators that will trigger motion and text object completion
-            -- to enable all native operators, set the preset / operators plugin above
-            operators = { gc = "Comments" },
-            key_labels = {
-                -- override the label used to display some keys. It doesn't effect WK in any other way.
-                -- For example:
-                -- ["<space>"] = "SPC",
-                -- ["<cr>"] = "RET",
-                -- ["<tab>"] = "TAB",
-            },
-            icons = {
-                breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
-                separator = "➜", -- symbol used between a key and it's label
-                group = "+", -- symbol prepended to a group
-            },
-            window = {
-                border = "single", -- none, single, double, shadow
-                position = "bottom", -- bottom, top
-                margin = { 1, 2, 1, 2 }, -- extra window margin [top, right, bottom, left]
-                padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
             },
             layout = {
                 height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -51,34 +22,22 @@ return {
                 spacing = 3, -- spacing between columns
                 align = "left", -- align columns left, center or right
             },
-            ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
-            hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ "}, -- hide mapping boilerplate
-            show_help = true, -- show help message on the command line when the popup is visible
-            --triggers = "auto", -- automatically setup triggers
-            triggers = {"<leader>", "g", "\'", "\"", "<c-w>"},-- or specify a list manually
-            triggers_blacklist = {
-                -- list of mode / prefixes that should never be hooked by WhichKey
-                -- this is mostly relevant for key maps that start with a native binding
-                -- most people should not need to change this
-                i = { "j", "k" },
-                v = { "j", "k" },
+            icons = {
+                mappings = false,
             },
+            spec = {
+                {"<leader>f", group = "find" },
+                {"<leader>l", group = "LSP" },
+                {"<leader>o", group = "open" },
+                {"<leader>h", group = "harpoon" },
+                {"<leader>d", group = "debug" },
+                {"<leader>g", group = "git" },
+                {
+                    mode = {"v"},
+                    {"<leader>f", group = "find" },
+                    {"<leader>l", group = "LSP" },
+                }
+            }
         }
-
-        which_key.register({
-            ["<leader>l"] = { name = "+LSP" },
-            ["<leader>f"] = { name = "+find" },
-        }, { mode = "v" })
-
-        which_key.register({
-            ["<leader>"] = {
-                f = { name = "+find" },
-                l = { name = "+LSP" },
-                o = { name = "+open" },
-                h = { name = "+harpoon" },
-                d = { name = "+debug" },
-                g = { name = "+git" },
-            },
-        })
     end
 }
