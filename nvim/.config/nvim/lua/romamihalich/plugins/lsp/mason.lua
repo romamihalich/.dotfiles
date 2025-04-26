@@ -11,10 +11,6 @@ require("mason-lspconfig").setup_handlers {
             capabilities = require("romamihalich.plugins.lsp.handlers").capabilities,
         }
 
-        if server_name == "rust_analyzer" and require('romamihalich.plugins.lsp.rust-tools').setup(opts) then
-            return
-        end
-
         if server_name == "lua_ls" then
             opts = vim.tbl_deep_extend("force", {
                 settings = {
