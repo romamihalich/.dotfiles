@@ -4,10 +4,7 @@ require("mason-lspconfig").setup {
 }
 require("mason-lspconfig").setup_handlers {
     function (server_name)
-        local default_on_attach = require("romamihalich.plugins.lsp.handlers").on_attach
-
         local opts = {
-            on_attach = default_on_attach,
             capabilities = require("romamihalich.plugins.lsp.handlers").capabilities,
         }
 
@@ -30,15 +27,7 @@ require("mason-lspconfig").setup_handlers {
 
         if server_name == "omnisharp" then
             opts.on_attach = function(client, bufnr)
-                default_on_attach(client, bufnr)
                 vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', "<cmd>lua require('omnisharp_extended').telescope_lsp_definitions()<CR>", { noremap=true, silent=true })
-            end
-        end
-
-        if server_name == "tsserver"   then
-            opts .on_attach = function(client, bufnr)
-                default_on_attach(client, bufnr)
-                client.server_capabilities.document_formatting = false
             end
         end
 

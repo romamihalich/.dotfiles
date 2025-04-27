@@ -34,19 +34,22 @@ M.setup = function()
     }
 
     vim.diagnostic.config(config)
-end
 
-M.on_attach = function(client, bufnr)
-    Keymap("n",  "<leader>la",  vim.lsp.buf.code_action,                                        "Actions")
-    Keymap("n",  "<leader>lf",  vim.lsp.buf.format,                                             "Formatting")
-    Keymap("n",  "<leader>lr",  vim.lsp.buf.rename,                                             "Rename")
-    Keymap("n",  "<leader>ll",  vim.diagnostic.open_float,                                      "Line diagnostics")
-    Keymap("n",  "<leader>lj",  function() vim.diagnostic.jump({count=1, float=true}) end,      "Next diagnostic")
-    Keymap("n",  "<leader>lk",  function() vim.diagnostic.jump({count=-1, float=true}) end,     "Prev diagnostic")
-    Keymap("v",  "<leader>la",  vim.lsp.buf.code_action,                                        "Code actions")
-    Keymap("n",  "gs",          function() vim.lsp.buf.signature_help({border='rounded'}) end,  "Signature help")
-    Keymap("n",  "gd",          function() require("telescope.builtin").lsp_definitions() end,  "Go to definition")
-    Keymap("n",  "gr",          function() require("telescope.builtin").lsp_references() end,   "Go to references")
+    vim.api.nvim_create_autocmd('LspAttach', {
+        group = vim.api.nvim_create_augroup('my.lsp', {}),
+        callback = function(args)
+            Keymap("n",  "<leader>la",  vim.lsp.buf.code_action,                                        "Actions")
+            Keymap("n",  "<leader>lf",  vim.lsp.buf.format,                                             "Formatting")
+            Keymap("n",  "<leader>lr",  vim.lsp.buf.rename,                                             "Rename")
+            Keymap("n",  "<leader>ll",  vim.diagnostic.open_float,                                      "Line diagnostics")
+            Keymap("n",  "<leader>lj",  function() vim.diagnostic.jump({count=1, float=true}) end,      "Next diagnostic")
+            Keymap("n",  "<leader>lk",  function() vim.diagnostic.jump({count=-1, float=true}) end,     "Prev diagnostic")
+            Keymap("v",  "<leader>la",  vim.lsp.buf.code_action,                                        "Code actions")
+            Keymap("n",  "gs",          function() vim.lsp.buf.signature_help({border='rounded'}) end,  "Signature help")
+            Keymap("n",  "gd",          function() require("telescope.builtin").lsp_definitions() end,  "Go to definition")
+            Keymap("n",  "gr",          function() require("telescope.builtin").lsp_references() end,   "Go to references")
+        end,
+    })
 end
 
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
