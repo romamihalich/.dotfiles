@@ -25,6 +25,12 @@ return {
             icons = {
                 mappings = false,
             },
+            -- Start hidden and wait for a key to be pressed before showing the popup
+            -- Only used by enabled xo mapping modes.
+            ---@param ctx { mode: string, operator: string }
+            defer = function(ctx)
+                return ctx.mode == "v" or ctx.mode == "V" or ctx.mode == "<C-V>"
+            end,
             spec = {
                 {"<leader>f", group = "find" },
                 {"<leader>l", group = "LSP" },
