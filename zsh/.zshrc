@@ -33,6 +33,7 @@ setopt interactive_comments
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
+setopt hist_ignore_all_dups
 
 [ -f $HISTFILE ] || touch $HISTFILE
 
