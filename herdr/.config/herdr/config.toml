@@ -1,8 +1,12 @@
+onboarding = false
+
 # [terminal]
 # default_shell = "pwsh"
 
 [keys]
 prefix = "alt+,"
+navigate_workspace_up = "k"
+navigate_workspace_down = "j"
 
 [ui]
 agent_panel_sort = "spaces"
