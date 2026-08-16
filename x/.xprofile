@@ -3,6 +3,7 @@
 if ! [ -f /etc/NIXOS ]; then
     export PATH=$PATH:~/.local/bin
     export PATH="$PATH:/home/romamihalich/.dotnet/tools"
+    export PATH="$PATH:/home/romamihalich/.opencode/bin"
 
     # export QT_QPA_PLATFORMTHEME="qt5ct"
     export EDITOR=/usr/bin/nvim
