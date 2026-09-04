@@ -5,7 +5,7 @@ alt + d
 alt + F2
         $BROWSER
 alt + F3
-        pcmanfm
+        thunar
 alt + n
         $TERMINAL -e $EDITOR
 alt + o

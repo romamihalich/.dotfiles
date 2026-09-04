@@ -56,7 +56,7 @@ def focus_float(qtile):
 mod = "mod1"
 terminal = "alacritty"
 browser = "qutebrowser"
-file_manager = "pcmanfm"
+file_manager = "thunar"
 
 keys = [
     # Switch between windows

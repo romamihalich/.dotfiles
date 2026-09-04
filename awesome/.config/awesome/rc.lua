@@ -51,7 +51,7 @@ editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .." -e ".. editor
 
 browser = os.getenv("BROWSER") or "qutebrowser"
-file_manager = "pcmanfm"
+file_manager = "thunar"
 
 modkey = "Mod4"
 
