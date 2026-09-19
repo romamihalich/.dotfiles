@@ -50,7 +50,7 @@ terminal = os.getenv("TERMINAL") or "alacritty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .." -e ".. editor
 
-browser = os.getenv("BROWSER") or "qutebrowser"
+browser = os.getenv("BROWSER") or "zen"
 file_manager = "thunar"
 
 modkey = "Mod4"

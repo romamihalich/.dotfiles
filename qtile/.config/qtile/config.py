@@ -55,7 +55,7 @@ def focus_float(qtile):
 
 mod = "mod1"
 terminal = "alacritty"
-browser = "qutebrowser"
+browser = "zen"
 file_manager = "thunar"
 
 keys = [
