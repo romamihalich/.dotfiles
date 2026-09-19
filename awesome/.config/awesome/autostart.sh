@@ -7,3 +7,4 @@ nitrogen --restore &
 conky &
 sbxkb &
 volumeicon &
+hiddify &
