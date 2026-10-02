@@ -3,7 +3,7 @@
 nm-applet &
 udiskie &
 picom &
-nitrogen --restore &
+~/.fehbg &
 conky &
 sbxkb &
 volumeicon &
