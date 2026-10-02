@@ -35,6 +35,7 @@ SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
 setopt hist_ignore_all_dups
 
+mkdir -p ~/.cache/zsh/
 [ -f $HISTFILE ] || touch $HISTFILE
 
 # enable only git 
