@@ -121,7 +121,7 @@ alias v=vifm
 alias o='xdg-open'
 alias lg='lazygit'
 alias ts='tmux-sessionizer'
-alias btw='neofetch'
+alias btw='fastfetch'
 alias gs='git status'
 
 # syntax highlight when tab compleating
