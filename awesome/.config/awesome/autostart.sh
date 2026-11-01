@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 
-nm-applet &
-udiskie --tray &
-picom &
-~/.fehbg &
-conky &
-volumeicon &
-hiddify &
+run() {
+  if ! pgrep -f "$1" ;
+  then
+    "$@"&
+  fi
+}
+
+run nm-applet
+run udiskie --tray
+run picom
+run ~/.fehbg
+run conky
+run volumeicon
+run hiddify
