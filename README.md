@@ -15,7 +15,7 @@ for dir in */; do stow "${dir%/}"; done
 
 Shell setup:
 ```bash
-sudo pacman -S zsh zsh-syntax-highlighting zsh-completions zsh-history-substring-search
+sudo pacman -S zsh zsh-syntax-highlighting zsh-completions zsh-history-substring-search exa
 chsh -s /bin/zsh
 ```
 
@@ -26,6 +26,13 @@ sudo pacman -S ttf-hack-nerd
 
 Awesome setup:
 ```bash
-sudo pacman -S xorg awesome feh thunar volumeicon picom network-manager-applet conky udiskie dmenu
+sudo pacman -S xorg awesome feh thunar volumeicon picom network-manager-applet conky udiskie dmenu sxiv papirus-icon
 feh --bg-fill /path/to/wallpaper
 ```
+
+Development tools:
+```bash
+sudo pacman -S git-delta lazygit nvim tree-sitter-cli
+```
+
+- herdr
