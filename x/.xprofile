@@ -24,3 +24,6 @@ xset m 0 0
 if ! [ -f /etc/NIXOS ]; then
     setxkbmap -layout "us,ru" -option "grp:lalt_lshift_toggle,caps:escape"
 fi
+
+# monitor setup
+xrandr --output HDMI-A-0 --primary --output DisplayPort-0 --right-of HDMI-A-0 --rotate left
